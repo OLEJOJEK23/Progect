@@ -1,0 +1,8 @@
+C:\Users\Глеб\source\repos\distance\distance\bin\Debug\distance.exe.config
+C:\Users\Глеб\source\repos\distance\distance\bin\Debug\distance.exe
+C:\Users\Глеб\source\repos\distance\distance\bin\Debug\distance.pdb
+C:\Users\Глеб\source\repos\distance\distance\obj\Debug\distance.csproj.AssemblyReference.cache
+C:\Users\Глеб\source\repos\distance\distance\obj\Debug\distance.csproj.SuggestedBindingRedirects.cache
+C:\Users\Глеб\source\repos\distance\distance\obj\Debug\distance.csproj.CoreCompileInputs.cache
+C:\Users\Глеб\source\repos\distance\distance\obj\Debug\distance.exe
+C:\Users\Глеб\source\repos\distance\distance\obj\Debug\distance.pdb
