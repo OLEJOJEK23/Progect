@@ -1,0 +1,41 @@
+# Ввод действия пользователем.
+print("введите знак действия(Если вы хотите из 1 числа вычесть 2 введите -, если из второго первое, то --, с деление аналогично,для квадратного уравнения введите #):")
+doing = input()
+# Ввод пользователем значений квадратного уравнения
+if doing == "#":
+    print("введите a")
+    a = int(input())
+    print("введите b")
+    b = int(input())
+    print("введите c")
+    c = int(input())
+# Решение квадратного уравнения.
+    discriminant = b ** 2 - 4*a*c
+    x1 = (-b + discriminant ** (1/2)) / (2 * a)
+    print("x1=" + str(x1))
+    x2 = (-b - discriminant ** (1 / 2)) / (2 * a)
+    print("x2=" + str(x2))
+    exit()
+# Ввод чисел пользователем
+print("введите первое число:")
+number1 = int(input())
+print("введите второе число")
+number2 = int(input())
+# Действие умножение
+if doing == "*":
+    print("ответ:" + str(number2 * number1))
+# Действие сложение
+elif doing == "+":
+    print("ответ:" + str(number2 + number1))
+ # Действие вычитание
+elif doing == "-":
+    print("ответ:" + str(number1 - number2))
+elif doing == "--":
+    print("ответ:" + str(number2 - number1))
+# Действие деление
+elif doing == "/":
+    print("ответ:" + str(number1 / number2))
+elif doing == "//":
+    print("ответ:" + str(number2 / number1))
+# Прощание с пользователем
+print("Спасибо что используете наш калькулятор")
