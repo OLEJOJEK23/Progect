@@ -1,0 +1,13 @@
+pol=0
+otr=0
+i=0
+for i in range(15):
+    print('vvedite chislo'); chislo=int(input())
+    if chislo<=0:
+        otr=otr+chislo
+    else:
+        pol=pol+chislo
+
+
+print('summa pol. chisel = '+str(pol))
+print('summa otr. chisel = '+str(otr))
