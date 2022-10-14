@@ -1,0 +1,45 @@
+def zanovo():
+ print('введите действие: "+,*,-,/,^"')
+ d=(input())
+ if d=='+':
+    print("vvedite 2 chisla")
+    p = float(input())
+    v = float(input())
+    print('ответ',p+v)
+ elif d=='-':
+    print("vvedite 2 chisla")
+    p = float(input())
+    v = float(input())
+    print('ответ',p-v)
+ elif d=='/':
+    print("vvedite 2 chisla")
+    p = float(input())
+    v = float(input())
+    print('ответ',p/v)
+
+ elif d=='^':
+    print("vvedite 3 chisla")
+    a = float(input())
+    b = float(input())
+    c=float(input())
+    dis=b**2-4*a*c
+    if dis<0:
+        print('ответ','net kor')
+    else:
+        print('ответ',"x1="+ str(round((-b+dis**0.5)/(2*a), 2)) + "" + "x2=" + str(round((-b-dis**0.5)/(2*a))))
+ elif d=='*':
+    print("vvedite 2 chisla")
+    p = float(input())
+    v = float(input())
+    print('ответ',p*v)
+ else:
+  print('ТЫ ТУПОЙ, СЫН ПОДЪЕЗДА БЛЯТЬ, ТЕБЕ ДАЖЕ СПИСОК ПРЕДОСТАВИЛИ')
+
+
+zanovo()
+while True:
+    f= input('Еще раз? [да/нет]')
+    if f == 'da':
+        zanovo()
+    else:
+        break
