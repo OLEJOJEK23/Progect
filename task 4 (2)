@@ -1,0 +1,50 @@
+exi = 1   # цикл для завершения или продолжения программы
+while exi != 0:    # цикл для завершения или продолжения программы
+    print("Введите символ действия которое хотите осуществить:\n"  # вывод на экран возможных действий
+          "+ - сложение\n"
+          "- - вычитание\n"
+          "-- - вычитание из 2 числа 1\n"
+          "* - умножение\n"
+          "/ - деление\n"
+          "// - деление 2 числа на 1\n"
+          "^ - возведение в степень\n"
+          "# - квадратное уравнение\n"
+          "Ваш выбор: ")
+    operation = ["+", "-", "/", "*", "^", "#", "--", "//"]  # список возможных действий
+    doing = input()   # ввод действия
+    while doing not in operation:  # цикл проверки на содержание действия в списке
+        print('Такая операция недоступна. Повторите попытку.')
+        exit()
+    if doing == "#":  # решение квадратного уравнения
+        print("введите a")
+        a = int(input())
+        print("введите b")
+        b = int(input())
+        print("введите c")
+        c = int(input())
+        discriminant = b ** 2 - 4 * a * c
+        x1 = (-b + discriminant ** (1 / 2)) / (2 * a)
+        print("x1=" + str(x1))
+        x2 = (-b - discriminant ** (1 / 2)) / (2 * a)
+        print("x2=" + str(x2))
+        exit()
+    print("введите первое число:")   # ввод чисел
+    number1 = int(input())
+    print("введите второе число")
+    number2 = int(input())
+    if doing == "*":
+        print("ответ:" + str(number2 * number1))
+    elif doing == "+":
+        print("ответ:" + str(number2 + number1))
+    elif doing == "-":
+        print("ответ:" + str(number1 - number2))
+    elif doing == "--":
+        print("ответ:" + str(number2 - number1))
+    elif doing == "/":
+        print("ответ:" + str(number1 / number2))
+    elif doing == "//":
+        print("ответ:" + str(number2 / number1))
+    elif doing == "^":
+        print("ответ:" + str(number1 ** number2))
+        print("Для закрытия программы введите 0, для продолжения любую цифру отличную от нуля")
+        exi = int(input())  # завершение или продолжение программы
