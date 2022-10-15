@@ -11,8 +11,9 @@ def minimum():
 def amount():
     amount = 0
     number = int(input("Введите число: "))
-    while number > 0:
-        number = number // 10
+    real_number = abs(number)
+    while real_number > 0:
+        real_number = real_number // 10
         amount = amount + 1
     print("Количество цифр в числе:", amount)
 def sum():
