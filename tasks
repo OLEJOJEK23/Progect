@@ -1,0 +1,55 @@
+#1) 
+print("a:" , (101+0)/3)
+print("b:" , 3.0e-6 * 10000000.1)
+print("c:" , True and True)
+print("d:", False and True)
+print("e:", (False and False) * (True and True))
+print("f:", (False and False) and (True and True))
+
+#2)
+number1, number2, number3, number4 = map(int, input("введите 4 числа через пробел: ").split())
+if number4 == number3 == number2 == number1:
+    print("равно")
+else:
+    print("не равно")
+
+
+#3)
+x = []
+i = 0
+n = int(input("Введите количество чисел: "))
+for i in range(i, n):
+    numb = int(input("Введите число: "))
+    x.append(numb)
+print(max(x))
+
+#4)
+x = []
+i = 0
+n = int(input("Введите количество чисел: "))
+for i in range(i, n):
+    numb = int(input("Введите число: "))
+    x.append(numb)
+print(min(x))
+
+#5)
+x = []
+i = 0
+n = int(input("Введите количество чисел: "))
+for i in range(n):
+    numb = int(input("Введите число: "))
+    x.append(numb)
+a = sum(x)/n
+for i in range(n):
+    if  x[i]  > a:
+        print(x[i])
+
+#6)
+number1, number2 = map(int, input("введите 2 числа через пробел: ").split())
+c = number1
+number2 = number2 - 1
+for i in range(number2):
+    number1 = number1 + c
+print(number1)
+    
+
