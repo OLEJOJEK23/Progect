@@ -1,0 +1,91 @@
+11111111111111111111111111111
+def f():
+    print('vvedite 3 chisla')
+    a = int(input())
+    b = int(input())
+    c = int(input())
+    x = [(a), (b), (c)]
+    print(min(x), '- min chislo')
+f()
+while True:
+    f()
+   
+22222222222222222222222222222222222
+def f():
+    a=0
+    b=float(input("vvedide chislo - "))
+    while b>0:
+        b=b//10
+        a=a+1
+    print("kol cifir v chisle ", a)
+    if b<0:
+        print('oshibka')
+while True:
+    f()
+    
+3333333333333333333333333333333333
+def f():
+    a=0
+    b=int(input('vvedite kol chisel: '))
+    for i in range(b):
+        c = float(input("vvedite chislo- "))
+        a=c+a
+    print("summa = ", a)
+f()
+while True:
+    f()
+    
+    4444444444444444444444444444444
+a = int(input('chislo = '))
+b = 1
+while a > 0:
+    b=b*a
+    a=a-1
+print(b)
+
+5555555555555555555555555555555555
+def zanovo():
+ print('введите действие: "+,*,-,/,^"')
+ d=(input())
+ if d=='+':
+    print("vvedite 2 chisla")
+    p = float(input())
+    v = float(input())
+    print('ответ',p+v)
+ elif d=='-':
+    print("vvedite 2 chisla")
+    p = float(input())
+    v = float(input())
+    print('ответ',p-v)
+ elif d=='/':
+    print("vvedite 2 chisla")
+    p = float(input())
+    v = float(input())
+    print('ответ',p/v)
+
+ elif d=='^':
+    print("vvedite 3 chisla")
+    a = float(input())
+    b = float(input())
+    c=float(input())
+    dis=b**2-4*a*c
+    if dis<0:
+        print('ответ','net kor')
+    else:
+        print('ответ',"x1="+ str(round((-b+dis**0.5)/(2*a), 2)) + "" + "x2=" + str(round((-b-dis**0.5)/(2*a))))
+ elif d=='*':
+    print("vvedite 2 chisla")
+    p = float(input())
+    v = float(input())
+    print('ответ',p*v)
+ else:
+  print('Попробуй еще раз')
+
+
+zanovo()
+while True:
+    f= input('Еще раз? [да/нет]')
+    if f == 'да':
+        zanovo()
+    else:
+        break
