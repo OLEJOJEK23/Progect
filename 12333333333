@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace game
 {
-    internal class Program
+    internal class game
     {
         static void Main(string[] args)
         {                       // ввод переменных
             int i = 3;
             int k = 0;
-            int password, tasks;
-            double health, health2, armor, armor2, percent, percent2, damage, damage2, real_damage, real_damage2;
-            int real_password = 1234;
+            int vvedennoe, zadanie;
+            double h1, h2, a1, a2, proc1, proc2, damage1, damage2, rdamage1, rdamage2;
+            int password = 1234;
             Random rand = new Random();
             do                              // создание пароля для входа в игру с 3 попытками ввода
             {
 
-                Console.WriteLine("Логин: Guest246");
+                Console.WriteLine("Логин: Голодные игры");
                 Console.Write("Пароль: ");
-                password = int.Parse(Console.ReadLine());
-                if (real_password == password)
+                vvedennoe = int.Parse(Console.ReadLine());
+                if (password == vvedennoe)
                 {
                     Console.WriteLine("Вход выполнен");
                     break;
@@ -35,165 +35,71 @@ namespace game
             }
             while (i != 0);
             if (i == 0)
-                Environment.Exit(0);                // выход из программы
-            Console.WriteLine("Выберите уровень 1, 2, 3"); // уровень — это задания на оценку, то есть: удовлетворительно — 1, хорошо — 2, отлично — 3 
-            Console.Write("Уровень: ");
-            tasks = int.Parse(Console.ReadLine());      // создание уровней
-            switch (tasks)
-            {
-                case 1:                                // задание на 3
-                    Console.Write("HP гладиатора: ");
-                    health = double.Parse(Console.ReadLine());
-                    if (health > 100 || health <= 0)            // проверка на то, чтобы хп были в диапазоне от 1 до 100
-                    {
-                        Console.WriteLine("Некорректное значение, HP может быть только от 1 до 100");
-                        Environment.Exit(0);                    // выход из программы
-                    }
-                    Console.Write("Броня гладиатора: ");
-                    armor = double.Parse(Console.ReadLine());
-                    if (armor > 100 || armor <= 0)              // проверка на то, чтобы броня была в диапазоне от 1 до 100
-                    {
-                        Console.WriteLine("Некорректное значение, броня может быть только от 1 до 100");
-                        Environment.Exit(0);                    // выход из программы
-                    }
-                    percent = armor / 4;                        // 25 процентов от числа
-                    damage = rand.Next(1, 100);
-                    real_damage = damage * (1 - percent / 100); // формула поглощения урона бронёй
-                    Console.WriteLine($"Урон по гладиатору: {Math.Round(real_damage, 0)}");
-                    if (health < real_damage)                   // проверка хп на то, чтобы хп было больше 0
-                        Console.WriteLine("HP гладиатора: 0");
-                    else
-                        Console.WriteLine($"HP гладиатора: {Math.Round(health - real_damage, 0)}"); // округление хп
-                    break;
-                case 2:                                             // задание на 4
-                    health = rand.Next(1, 100);
-                    Console.WriteLine($"HP первого гладиатора: {health}");      // случайные числа от 1 до 100
-                    health2 = rand.Next(1, 100);
-                    Console.WriteLine($"HP второго гладиатора: {health2}");
-                    armor = rand.Next(1, 100);
-                    Console.WriteLine($"Броня первого гладиатора: {armor}");
-                    armor2 = rand.Next(1, 100);
-                    Console.WriteLine($"Броня второго гладиатора: {armor2}");
-                    damage = rand.Next(1, 100);
-                    percent = armor / 4;                                    // 25 процентов от числа 
-                    real_damage = damage * (1 - percent / 100);             // формула поглощения урона бронёй
-                    health = health - real_damage;
-                    Console.WriteLine($"Урон по первому гладиатору: {Math.Round(real_damage, 0)}");         // округление урона
-                    damage2 = rand.Next(1, 100);
-                    percent2 = armor2 / 4;
-                    real_damage2 = damage2 * (1 - percent2 / 100);
-                    health2 = health2 - real_damage2;
-                    Console.WriteLine($"Урон по второму гладиатору: {Math.Round(real_damage2, 0)}");                // вывод хп первого и второго гладиаторов с условиями
-                    if (health > 0 && health2 > 0)
-                    {
-                        Console.WriteLine($"Оба гладиатора выжили, у первого гладиатора осталось {Math.Round(health, 0)} HP, у второго гладиатора осталось {Math.Round(health2, 0)} HP");
-                        break;
-                    }
-                    if (health > 0 && health > health2)
-                        Console.WriteLine($"Победил первый гладиатор, у него осталось {Math.Round(health, 0)} HP");
-                    else if (health2 > 0 && health2 > health)
-                        Console.WriteLine($"Победил второй гладиатор, у него осталось {Math.Round(health2, 0)} HP");
-                    else
-                        Console.WriteLine($"Оба гладиатора пали");
-                    break;
-                    
-                    
-                    
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace gladiator
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {                       // переменные
-            int i = 3;
-            int password, tasks;
-            double h1, h2, ar1, ar2, proc1, proc2, damage1, damage2, rdamage1, rdamage2;
-            int rpassword = 1234;
-            Random rand = new Random();
-            do                              // создание пароля для входа в игру с 3 попытками ввода
-            {
-
-                Console.WriteLine("Логин: Guest246");
-                Console.Write("Пароль: ");
-                password = int.Parse(Console.ReadLine());
-                if (rpassword == password)
-                {
-                    Console.WriteLine("Вход выполнен");
-                    break;
-                }
-                else
-                {
-                    i--;
-                    Console.WriteLine($"Неверный пароль, осталось попыткок: {i}");
-                }
-            }
-            while (i != 0);
-            if (i == 0)
-                Environment.Exit(0);        // выход 
-            Console.WriteLine("Выберите задание 1 или 2");
+                Environment.Exit(0);                // выход 
+            Console.WriteLine("Выберите задание на 3 или на 4");
             Console.Write("Задание: ");
-            tasks = int.Parse(Console.ReadLine());      // создание кейсов
-            switch (tasks)
+            zadanie = int.Parse(Console.ReadLine());      // создание кейсов
+            switch (zadanie)
             {
-              case 1:                                // задание на 3
-                    Console.Write("Здоровье гладиатора: ");
+                case 3:                                // задание на 3
+                    Console.Write("здоровьe гладиатора: ");
                     h1 = double.Parse(Console.ReadLine());
-                    if (h1 > 100 || h1 <= 0)            // проверка здоровья на диапозон 
+                    if (h1 > 100 || h1 <= 0)            // проверка здоровья на диапазон 
                     {
                         Console.WriteLine("Значение не подходит, Здоровье может быть только от 1 до 100");
-                        Environment.Exit(0);                    // выход из программы
+                        Environment.Exit(0);                    // выход 
                     }
                     Console.Write("Броня гладиатора: ");
-                    ar1 = double.Parse(Console.ReadLine());
-                    if (ar1 > 100 || ar1 <= 0)              // проверка брони на диапозон
+                    a1 = double.Parse(Console.ReadLine());
+                    if (a1 > 100 || a1 <= 0)              // проверка брони на диапозон
                     {
                         Console.WriteLine("Значение не подходит, броня может быть только от 1 до 100");
-                        Environment.Exit(0);                    // выход из программы
+                        Environment.Exit(0);                    // выход 
                     }
-                    proc1 = ar1 / 5;                        // 20 процентов от числа
+                    proc1 = a1 / 5;                        // 20 процентов от числа
                     damage1 = rand.Next(1, 100);
-                    rdamage1 = damage1 * (1 - proc1 / 100);       // Формула для брони
+                    rdamage1 = damage1 * (1 - proc1 / 100); // формула для брони
                     Console.WriteLine($"Урон по гладиатору: {Math.Round(rdamage1, 0)}");
-                    if (h1 > rdamage1)                   // проверка на то, чтобы здоровья было больше 0
-                        Console.WriteLine($"Здоровье гладиатора: {Math.Round(h1 - rdamage1, 0)}"); // округление хп
+                    if (h1 < rdamage1)
+                        Console.WriteLine($"Здоровье гладиатора: 0") ;// проверка на то, чтобы здоровье было больше 0
+
                     else
-                        Console.WriteLine("Здоровье гладиатора: 0"); // округление хп
+                        Console.WriteLine($"Здоровье гладиатора: {Math.Round(h1 - rdamage1, 0)}"); // округление 
                     break;
-              case 2:
+                case 4:                                             // задание на 4
                     h1 = rand.Next(1, 100);
                     Console.WriteLine($"Здоровье первого гладиатора: {h1}");      // случайные числа от 1 до 100
                     h2 = rand.Next(1, 100);
                     Console.WriteLine($"Здоровье второго гладиатора: {h2}");
-                    ar1 = rand.Next(1, 100);
-                    Console.WriteLine($"Броня первого гладиатора: {ar1}");
-                    ar2 = rand.Next(1, 100);
-                    Console.WriteLine($"Броня второго гладиатора: {ar2}");
+                    a1 = rand.Next(1, 100);
+                    Console.WriteLine($"Броня первого гладиатора: {a1}");
+                    a2 = rand.Next(1, 100);
+                    Console.WriteLine($"Броня второго гладиатора: {a2}");
                     damage1 = rand.Next(1, 100);
-                    proc1 = ar1 / 5;                                    // 20 процентов от числа 
-                    rdamage1 = damage1 * (1 - proc1 / 100);             // формула поглощения урона бронёй
+                    proc1 = a1 / 5;                                     
+                    rdamage1 = damage1 * (1 - proc1 / 100);             // формула брони
                     h1 = h1 - rdamage1;
                     Console.WriteLine($"Урон по первому гладиатору: {Math.Round(rdamage1, 0)}");         // округление урона
                     damage2 = rand.Next(1, 100);
-                    proc2 = ar2 / 5;
+                    proc2 = a2 / 5;
                     rdamage2 = damage2 * (1 - proc2 / 100);
                     h2 = h2 - rdamage2;
-                    Console.WriteLine($"Урон по второму гладиатору: {Math.Round(rdamage2, 0)}");                // вывод хп первого и второго гладиаторов с условиями
+                    Console.WriteLine($"Урон по второму гладиатору: {Math.Round(rdamage2, 0)}");                // вывод здоровья первого и второго гладиаторов 
                     if (h1 > 0 && h2 > 0)
                     {
-                        Console.WriteLine($"Оба гладиатора выжили, у первого гладиатора осталось {Math.Round(h1, 0)} здоровья, у второго гладиатора осталось {Math.Round(h2, 0)} здоровья");
+                        Console.WriteLine($"Оба гладиатора выжили, у первого гладиатора осталось {Math.Round(h1, 0)} Здоровья, у второго гладиатора осталось {Math.Round(h2, 0)} Здоровья");
+                        break;
+                    }
+                    if (h1 > 0 && h1 > h2)
+                        Console.WriteLine($"У первый гладиатора, осталось {Math.Round(h1, 0)} Здоровья, а второй вылетел с игры");
+                    else if (h2 > 0 && h2 > h1)
+                        Console.WriteLine($"У второго гладиатора, осталось {Math.Round(h2, 0)} Здоровья, а первый вылетел с игры");
+                    else
+                        Console.WriteLine($"Оба гладиатора вылетели с игры");
                     break;
 
-                    }
+            }
 
-        }
+            }
         }
     }
-}                    
-                   
-                 
