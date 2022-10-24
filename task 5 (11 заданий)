@@ -43,7 +43,6 @@ match tasks:      # создание кейсов
     case 6:
         number1, number2 = map(int, input("введите 2 числа через пробел: ").split())      # ввод 2 чисел
         c = number1
-        number2 = number2 - 1
         for i in range(number2):      # создание цикла сложения чисел
             number1 = number1 + c     # сложение чисел(умножение)
         print(number1)          # вывод
