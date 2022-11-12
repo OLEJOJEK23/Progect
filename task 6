@@ -1,0 +1,16 @@
+list1 = [1, 8, 2, 76, 8, 2, 563, 7]
+list2 = [7, 3, 9, 71, 876, 23, 63]
+list3 =[]
+n = 8
+for i in range (n):
+    a = list1[i]
+    i += 1
+    if a % 2 == 1:
+        list3.append(a)
+n = 7
+for i in range (n):
+    a = list1[i]
+    i += 1
+    if a % 2 == 0:
+        list3.append(a)
+print(*list3)
