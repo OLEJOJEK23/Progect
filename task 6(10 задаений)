@@ -1,0 +1,152 @@
+tasks = int(input("Введите номер задания :"))
+match tasks:      # создание кейсов
+    case 1:
+        from random import randint    # создание random
+        list1 = []            # создание пустого списка
+        for i in range(10):              # открытие цикла
+            list1.append(randint(1, 500))          # генерация random число и добавление его в список
+        print("Список 1:" + str(list1))            # вывод списка
+        list2 = []             # создание пустого списка
+        for i in range(10):      # открытие цикла
+            list2.append(randint(1, 500))        # генерация random числа и добавление его в список
+        print("Список 2:" + str(list2))            # вывод списка
+        list3 = []        # создание пустого списка
+        n = 10          # количество повторений цикла
+        for i in range(n):         # открытие цикла
+            number = list1[i]     # Взятие первого числа из списка
+            if number % 2 == 0:         # проверка на чётность
+                list3.append(number)      # добавление числа в список
+        n = 10              # количество повторений цикла
+        for i in range(n):         # открытие цикла
+            number = list2[i]        # Взятие первого числа из списка
+            if number % 2 != 0:            # проверка на нечётность
+                list3.append(number)       # добавление числа в список
+        print("Финальный список:" + str(list3))                # вывод списка
+    case 2:
+        from random import randint   # создание random
+        list1 = []      # создание пустого списка
+        list2 = []       # создание пустого списка
+        list3 = []        # создание пустого списка
+        for i in range(20):            # открытие цикла
+            list1.append(randint(1, 500))      # генерация random числа и добавление его в список
+        print("Начальный список:" + str(list1))   # вывод списка
+        n = 20      # количество повторений цикла
+        for i in range(n):     # открытие цикла
+            number = list1[i]      # Взятие первого числа из списка
+            if number % 2 == 0:    # проверка на чётность
+                list2.append(number)       # добавление числа в список
+            else:
+                list3.append(number)    # добавление числа в список
+        print("Список чётных чисел:" + str(list2))      # вывод списка
+        print("Список нечётных чисел:" + str(list3))            # вывод списка
+    case 3:
+        numbers = list(range(1, 20))            # Создание списка с интервалом
+        print(f"Изначальные числа:{numbers}")           # вывод списка
+        list2 = []          # создание пустого списка
+        n = 19          # количество повторений цикла
+        for i in range(n):       # открытие цикла
+            k = 0               # счётчик
+            number = numbers[i]         # Взятие первого числа из списка
+            for p in range(2, number // 2 + 1):     # открытие цикла проверяющего число на то, сколько у него делителей
+                if number % p == 0:
+                    k = k + 1
+            if k == 0:
+                list2.append(number)    # добавление числа в список
+        print(f"Простые числа:{list2}")
+    case 4:
+        number = int(input("Введите число:"))
+        b = ''                  # создание пустой строковой переменной 
+        h = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'      # создание алфавита для систем счисления
+        system = int(input("Введите желаемую систему счисления числом:"))
+        if system <= 36:
+            while number > 0:
+                b = h[number % system] + b       # перевод числа в систему счисления
+                number = number // system
+            print(f"Получившееся число в {system} системе счисления:{b}")
+    case 5:
+        from random import randint
+        list1 = []
+        list2 = []
+        list3 = []
+        for i in range(8):
+            list1.append(randint(1, 20))
+        print("Список 1:" + str(list1))
+        for i in range(8):
+            list2.append(randint(4, 28))
+        print("Список 2:" + str(list2))
+        n = 8
+        k = 0
+        for i in range(n):
+            a = list1[i]
+            for i in range(n):
+                b = list2[i]
+                if b != a:
+                    k = k + 1
+                if k == 8:
+                    list3.append(a)
+            k = 0
+        print(list3)
+    case 6:
+        numbers = [int(number) for number in input("Введите числа:").split(', ')]
+        print(numbers)
+    case 7:
+        from random import randint
+        list1 = []
+        for i in range(8):
+            list1.append(randint(1, 20))
+        n = 8
+        print("Список:" + str(list1))
+        for i in range(n - 1):
+            for j in range(i + 1, n):   # проверка элементов на уникальность
+                if list1[i] == list1[j]:
+                    print("Не все элементы уникальны")
+                    quit()
+        print("Все элементы уникальны")
+    case 8:
+        number = int(input("Введите число: "))
+        if number % 2 == 0:
+            print("Число чётное")
+        else:
+            print("Число нечётное")
+    case 9:
+        height = int(input("Введите высоту: "))
+        size = str(input("Выберите велину (Футы или дюймы): "))
+        if size == "футы":
+            height = height * 30.48
+            print(f"Высота в сантиметрах: {height}")
+        elif size == "дюймы":
+            height = height * 2.54
+            print(f"Высота в сантиметрах: {height}")
+        else:
+            print("Неверное значение измерения")
+    case 10:
+        action = int(input("Введите действие \n Перевод секунд в день, час, минуты (1) \n Перевод минут в день, час и секунды(2) \n Перевод часов в день, минуты и секунды(3) \n Перевод дней в часы, минуты и секунды(4)\n "))
+        match action:
+            case 1:
+                seconds = int(input("Введите количество секунд: "))
+                day = seconds/86400
+                hour = seconds/3600
+                minute = seconds/60
+                print(f"Минут:{minute}\n Часов:{hour}\n Дней:{day}")
+            case 2:
+                minute = int(input("Введите количество минут: "))
+                day = minute / 1440
+                hour = minute / 60
+                seconds = minute * 60
+                print(f"Секунд:{seconds}\n Часов:{hour}\n Дней:{day}")
+            case 3:
+                hour = int(input("Введите количество часов: "))
+                day = hour / 24
+                minute = hour * 60
+                seconds = hour * 3600
+                print(f"Секунд:{seconds}\n Минут:{minute}\n Дней:{day}")
+            case 4:
+                day = int(input("Введите количество дней: "))
+                seconds = day * 86400
+                hour = day * 24
+                minute = day * 1440
+                print(f"Секунд:{seconds}\n Минут:{minute}\n Часов:{hour} ")
+            case _:
+                print("У вас нет прав")
+    case _:
+        print("ТАКОГО ЗАДАНИЯ НЕТ. НЕТУ!!!!!!")
