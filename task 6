@@ -1,16 +1,161 @@
-list1 = [1, 8, 2, 76, 8, 2, 563, 7]
-list2 = [7, 3, 9, 71, 876, 23, 63]
-list3 =[]
-n = 8
-for i in range (n):
-    a = list1[i]
-    i += 1
-    if a % 2 == 1:
-        list3.append(a)
-n = 7
-for i in range (n):
-    a = list1[i]
-    i += 1
-    if a % 2 == 0:
-        list3.append(a)
-print(*list3)
+task = int(input("Введите номер задания (1-10)"))
+match task:
+    case 1:
+        from random import randint
+        numbers1 = []
+        n = 15
+        for i in range(n):
+            numbers1.append(randint(1, 1000))
+        print("Первый список", *numbers1)
+        numbers2 = []
+        for i in range(n):
+            numbers2.append(randint(1, 1000))
+        print("Второй список", *numbers2)
+        numbers12 = []
+        for i in range(n):
+            numbers = numbers1[i]
+            if numbers % 2 != 0:
+                numbers12.append(numbers)
+        for i in range(n):
+            numbers = numbers2[i]
+            if numbers % 2 == 0:
+                numbers12.append(numbers)
+        print("Числа:", *numbers12)
+    case 2:
+        from random import randint
+        numbers = []
+        numbers2 = []
+        n = 15
+        for i in range(n):
+            numbers.append(randint(1, 1000))
+        print("Список", *numbers)
+        for i in range(n):
+            number = numbers[i]
+            numbers2.insert(0, number)
+        print("В обратном порядке", *numbers2)
+    case 3:
+        n1, n2 = map(float, input("Введите диапазон через пробел: ").split())
+        n1 = round(n1)
+        numbers = []
+        number1 = []
+        for j in range(n1, round(n2 + 1)):
+            numbers.append(j)
+        try:
+            for i in range(round(n2 - 1)):
+                k = 0
+                n = numbers[i]
+                if n != 1:
+                    for p in range(2, n // 2 + 1):
+                        if n % p == 0:
+                             k = k + 1
+                    if k == 0:
+                        number1.append(n)
+            print("Простые числа:",*number1)
+        except:
+            print("Простые числа:", *number1)
+    case 4:
+        tasks = int(input("Введите 2, 8, 16 для перевода 10 СС в указанную СС\nВведите 10 для перевода СС 2, 8, 16 в 10 СС\nВведите СС: "))
+        match tasks:
+            case 2:
+                n = int(input("Введите число в 10 СС: "))
+                print(bin(n)[2:])
+            case 8:
+                n = int(input("Введите число в 10 СС: "))
+                print(oct(n)[2:])
+            case 16:
+                n = int(input("Введите число в 10 СС: "))
+                print(hex(n)[2:])
+            case 10:
+                tasks = int(input("Введите CC из которой переводите "))
+                match tasks:
+                    case 2:
+                        n = input("Введите число в 2 СС: ")
+                        print(int(n, 2))
+                    case 8:
+                        n = input("Введите число в 8 СС: ")
+                        print(int(n, 8))
+                    case 16:
+                        n = input("Введите число в 16 СС: ")
+                        print(int(n, 16))
+                    case _:
+                        print("Вводите 2, 8 или 16!")
+            case _:
+                print("Вводите 2, 8 или 16!")
+    case 5:
+        from random import randint
+        numbers1 = []
+        n = 15
+        k = 0
+        for i in range(n):
+            numbers1.append(randint(1, 1000))
+        print("Первый список", *numbers1)
+        numbers2 = []
+        for i in range(n):
+            numbers2.append(randint(1, 1000))
+        print("Второй список", *numbers2)
+        numbers12 = []
+        for i in range(n):
+            n1 = numbers1[i]
+            for i in range(n):
+                n2 = numbers2[i]
+                if n1 != n2:
+                    k += 1
+                if k == 15:
+                    numbers12.append(n1)
+            k = 0
+        print("Числа:", *numbers12)
+    case 6:
+        n = list(map(int, input().split(',')))
+        print(*n)
+    case 7:
+        from random import randint
+        numbers = []
+        n = 15
+        for i in range(n):
+            numbers.append(randint(1, 1000))
+        print("Список", *numbers)
+        for i in range(n - 1):
+            for j in range(i + 1, n):
+                if numbers[i] == numbers[j]:
+                    print("Не все уникальны")
+                    exit()
+        print("Все уникальны")
+    case 8:
+        n = int(input("Введите число: "))
+        if n % 2 == 0:
+            print("Четное")
+        else:
+            print("Нечетное")
+    case 9:
+        n = input("Введите 'футы' или 'дюймы': ")
+        if n == 'футы':
+            h = float(input("Введите высоту в футах: "))
+            print("Высота в см:", h * 30.48)
+        if n == 'дюймы':
+            h = float(input("Введите высоту в дюймах: "))
+            print("Высота в см:", h * 2.54)
+    case 10:
+        n = int(input("Введите 1 - для перевода секунд, 2 - минут, 3 - часов, 4 - дней"))
+        match n:
+            case 1:
+                sec = int(input("Введите кол-во секунд: "))
+                print(f"min = {sec / 60}")
+                print(f"hour = {sec / 3600}")
+                print(f"day = {sec / 86400}")
+            case 2:
+                min = int(input("Введите кол-во минут: "))
+                print(f"sec = {min * 60}")
+                print(f"hour = {min / 60}")
+                print(f"day = {min / 1440}")
+            case 3:
+                hour = int(input("Введите кол-во часов: "))
+                print(f"sec = {hour * 3600}")
+                print(f"min = {hour * 60}")
+                print(f"day = {hour / 24}")
+            case 4:
+                day = int(input("Введите кол-во дней: "))
+                print(f"sec = {day / 86400}")
+                print(f"min = {day / 1440}")
+                print(f"hour = {day / 24}")
+    case _:
+        print("Такого задания нет (1-10)")
