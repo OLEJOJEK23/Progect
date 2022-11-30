@@ -1,0 +1,103 @@
+import math
+Razdel = str(input("Введите Раздел: "))
+match Razdel:
+    case "Ядерные реакции":
+        Formula = str(input("Введите номер задания: "))
+        match Formula:
+            case "1":
+                result = 0
+                c2 = 299792458**2
+                print("Формула: E=mc2")
+                finding = str(input("Введите искомое: "))
+                if finding == "m":
+                    e = int(input("Введите изменение энергии : "))
+                    result = e * c2
+                elif finding == "e":
+                    m = int(input("Введите изменение массы : "))
+                    result = c2 * m
+                else:
+                    print("Переменная не найдена.")
+                print(f"Ответ:{result}")
+            case "2":
+                print("Формула: v=(E-E)/h")
+                e1 = float(input("Введите энергию: "))
+                e2 = float(input("Введите энергию: "))
+                h = 6.63 * (10**(-34))
+                result = (e1 - e2)/h
+                print(f"Ответ:{result}")
+            case _:
+                print("Здесь пока ничего нет, но мы работаем над этим")
+
+
+    case "Законы сохранения":
+        Formula = str(input("Введите номер задания: "))
+        match Formula:
+            case "1":
+                result = 0
+                print("Формула: p=f*t")
+                finding = str(input("Введите искомое(p, f, t): "))
+                if finding == "p":
+                    f = float(input("Введите силу: "))
+                    t = float(input("Введите время: "))
+                    result = f * t
+                elif finding == "t":
+                    p = float(input("Введите импульс: "))
+                    f = float(input("Введите силу: "))
+                    result = p / f
+                elif finding == "f":
+                    t = float(input("Введите время: "))
+                    p = float(input("Введите импульс: "))
+                    result = p / t
+                else:
+                    print("Переменная не найдена.")
+                print(f"Ответ:{result}")
+            case "2":
+                F = float(input("Введите силу: "))
+                S = float(input("Введите расстояние пперемещения: "))
+                Cosa = float(input("Введите угол между направлением силы и направлением перемещения (в градусах):"))
+                cos = math.cos(Cosa)
+                A = F * S * cos
+                print(f"Работа равна: {A} Дж")
+            case "3":
+                result = 0
+                print("Формула: N = A / t")
+                finding = str(input("Введите искомое(n, a, t): "))
+                if finding == "n":
+                    a = float(input("Введите работу: "))
+                    t = float(input("Введите время: "))
+                    result = a / t
+                elif finding == "t":
+                    n = float(input("Введите мощность: "))
+                    a = float(input("Введите работу: "))
+                    result = a / n
+                elif finding == "a":
+                    t = float(input("Введите время: "))
+                    n = float(input("Введите мощность: "))
+                    result = n * t
+                else:
+                    print("Переменная не найдена.")
+                print(f"Ответ:{result}")
+            case "4":
+                result = 0
+                g = 9.8
+                print("Формула: Ep = m * g * h")
+                finding = str(input("Введите искомое(ep, m, g, h): "))
+                if finding == "ep":
+                    m = float(input("Введите массу: "))
+                    h = float(input("Введите высоту: "))
+                    result = m * g * h
+                elif finding == "m":
+                    ep = float(input("Введите потенциальную энергию: "))
+                    h = float(input("Введите высоту: "))
+                    result = ep / (g * h)
+                elif finding == "h":
+                    ep = float(input("Введите потенциальную энергию: "))
+                    m = float(input("Введите массу: "))
+                    result = ep / (g * m)
+                else:
+                    print("Переменная не найдена.")
+                print(f"Ответ:{result}")
+            case _:
+                print("Здесь пока ничего нет, но мы работаем над этим")
+    case _:
+        print("Здесь пока ничего нет, но мы работаем над этим")
