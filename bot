@@ -1,0 +1,175 @@
+import telebot
+from telebot import types
+from cfg import *
+import math
+
+bot = telebot.TeleBot(token)
+number1 = 0
+number2 = 0
+skull = ""
+
+
+@bot.message_handler(commands=['start'])
+def start(message):
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    btn1 = types.KeyboardButton("Формулы")
+    btn2 = types.KeyboardButton("Конвертор")
+    markup.add(btn1, btn2)
+    bot.send_message(message.chat.id,
+                     text="Привет, {0.first_name}! Я бот.".format(
+                         message.from_user), reply_markup=markup)
+
+
+@bot.message_handler(content_types=['text'])
+def func(message):
+    if message.text == "Конвертор":
+        bot.send_message(message.chat.id, text="Привет.. Спасибо что читаешь статью!)")
+    elif message.text == "Формулы":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Динамика")
+        btn2 = types.KeyboardButton("Термодинамика")
+        btn3 = types.KeyboardButton("Основы МКТ")
+        btn4 = types.KeyboardButton("Кинематика")
+        btn5 = types.KeyboardButton("Законы сохранения")
+        btn6 = types.KeyboardButton("Механика жидкостей")
+        btn7 = types.KeyboardButton("Колебания и волны")
+        btn8 = types.KeyboardButton("Оптика")
+        btn9 = types.KeyboardButton("Электростатика")
+        btn10 = types.KeyboardButton("Постоянный ток")
+        btn11 = types.KeyboardButton("Электромагнитные колебания")
+        btn12 = types.KeyboardButton("Индукция")
+        btn13 = types.KeyboardButton("Квантовая физика")
+        btn14 = types.KeyboardButton("Ядерные реакции")
+        btn15 = types.KeyboardButton("Основы СТО")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, back)
+        bot.send_message(message.chat.id, text="Выберите раздел", reply_markup=markup)
+
+    elif message.text == "Динамика":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Сила, масса, ускорение")
+        btn2 = types.KeyboardButton("Сила тяжести")
+        btn3 = types.KeyboardButton("Сила трения")
+        btn4 = types.KeyboardButton("Закон всемирн. тяготения")
+        btn5 = types.KeyboardButton("Первая косм. скорость")
+        btn6 = types.KeyboardButton("Вторая косм. скорость")
+        btn7 = types.KeyboardButton("Вес тела")
+        btn8 = types.KeyboardButton("Сила упругости")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, back)
+        bot.send_message(message.chat.id, text="Выберите формулу", reply_markup=markup)
+
+    elif message.text == "Термодинамика":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Внутрен. энергия одноатомного газа(1)")
+        btn2 = types.KeyboardButton("Внутрен. энергия одноатомного газа(2)")
+        btn3 = types.KeyboardButton("Удельная теплота газа")
+        btn4 = types.KeyboardButton("Работа расширения газа")
+        btn5 = types.KeyboardButton("Работа изотерм. расширения газа")
+        btn6 = types.KeyboardButton("Первый закон термодинамики")
+        btn7 = types.KeyboardButton("КПД теплового двигателя(1)")
+        btn8 = types.KeyboardButton("КПД теплового двигателя(2)")
+        btn9 = types.KeyboardButton("Максимальное КПД")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, back)
+        bot.send_message(message.chat.id, text="Выберите формулу", reply_markup=markup)
+
+    elif message.text == "Основы МКТ":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Основное уравнение МКТ")
+        btn2 = types.KeyboardButton("Концентрация молекул")
+        btn3 = types.KeyboardButton("Давление идеального газа")
+        btn4 = types.KeyboardButton("Внутренняя энергия молекул")
+        btn5 = types.KeyboardButton("Средняя кинетическая энергия")
+        btn6 = types.KeyboardButton("Уравнение состояния идеального газа")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, btn3, btn4, btn5, btn6, back)
+        bot.send_message(message.chat.id, text="Выберите формулу", reply_markup=markup)
+
+    elif message.text == "Кинематика":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        b1 = types.KeyboardButton("Путь,время,скорость")
+        b2 = types.KeyboardButton("Ускорение")
+        btn3 = types.KeyboardButton("Путь")
+        btn4 = types.KeyboardButton("Высота тела брошенного")
+        btn5 = types.KeyboardButton("Скорость тела брошенного")
+        btn6 = types.KeyboardButton("Скорость, ускорение, время")
+        btn7 = types.KeyboardButton("Центростремительное ускорение(1)")
+        btn8 = types.KeyboardButton("Угловая скорость")
+        btn9 = types.KeyboardButton("Равномерное круговое движение")
+        btn10 = types.KeyboardButton("Линейная скорость")
+        btn11 = types.KeyboardButton("Период вращения(1)")
+        btn12 = types.KeyboardButton("Период вращения(2)")
+        btn13 = types.KeyboardButton("Период вращения(3)")
+        btn14 = types.KeyboardButton("Центростремительное ускорение(2)")
+        btn15 = types.KeyboardButton("Частота вращения")
+        b = types.KeyboardButton("Центростремительное ускорение(3)")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(b1, b2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, b, back)
+        bot.send_message(message.chat.id, text="Выберите формулу", reply_markup=markup)
+
+    elif message.text == "Законы сохранения":
+        bot.send_message(message.chat.id, text="Поздороваться с читателями")
+
+    elif message.text == "Механика жидкостей":
+        bot.send_message(message.chat.id, text="Поздороваться с читателями")
+
+    elif message.text == "Колебания и волны":
+        bot.send_message(message.chat.id, text="Поздороваться с читателями")
+
+    elif message.text == "Оптика":
+        bot.send_message(message.chat.id, text="Поздороваться с читателями")
+
+    elif message.text == "Электростатика":
+        bot.send_message(message.chat.id, text="Поздороваться с читателями")
+
+    elif message.text == "Постоянный ток":
+        bot.send_message(message.chat.id, text="Поздороваться с читателями")
+
+    elif message.text == "Электромагнитные колебания":
+        bot.send_message(message.chat.id, text="Поздороваться с читателями")
+
+    elif message.text == "Индукция":
+        bot.send_message(message.chat.id, text="Поздороваться с читателями")
+
+    elif message.text == "Квантовая физика":
+        bot.send_message(message.chat.id, text="Поздороваться с читателями")
+
+    elif message.text == "Ядерные реакции":
+        bot.send_message(message.chat.id, text="Поздороваться с читателями")
+
+    elif message.text == "Основы СТО":
+        bot.send_message(message.chat.id, text="Поздороваться с читателями")
+
+    elif message.text == "Путь,время,скорость":
+        mes = bot.send_message(message.chat.id, text="Введите время")
+        bot.register_next_step_handler(mes, operation1)
+        global skull
+        skull = "скорость"
+
+    elif message.text == "Вернуться в главное меню":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        button1 = types.KeyboardButton("Формулы")
+        button2 = types.KeyboardButton("Конвертор")
+        markup.add(button1, button2)
+        bot.send_message(message.chat.id, text="Вы вернулись в главное меню", reply_markup=markup)
+    else:
+        bot.send_message(message.chat.id, text="На такую команду я не запрограммирован..")
+
+
+@bot.message_handler(content_types=['text'])
+def operation1(message):
+    global number1
+    number1 = int(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите {skull}")
+    bot.register_next_step_handler(mes, operation2)
+
+
+@bot.message_handler(content_types=['text'])
+def operation2(message):
+    global number2
+    number2 = int(message.text)
+    bot.send_message(message.chat.id, text=f"{number2 + number1}")
+
+
+bot.polling(none_stop=True)
