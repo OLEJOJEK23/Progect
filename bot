@@ -1,0 +1,337 @@
+c = 299792458
+c2 = 299792458**2
+h = 6.63 * (10**(-34))
+hmal = (6.63 * (10 ** (-34))) / (2 * pi)
+e0 = 8.86 * (10**(-12))
+
+    elif message.text == "Ядерные реакции":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Формула Эйнштейна")
+        btn2 = types.KeyboardButton("Второй постулат Бора (правило частот)")
+        btn3 = types.KeyboardButton("Квантование электронных орбит")
+        btn4 = types.KeyboardButton("Скорость электрона на боровской орбите")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, btn3, btn4, back)
+        bot.send_message(message.chat.id, text="Выберите формулу", reply_markup=markup)
+
+    elif message.text == "Законы сохранения":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Импульс (2 закон Ньютона)")
+        btn2 = types.KeyboardButton("Механическая работа и угол")
+        btn3 = types.KeyboardButton("Мощность")
+        btn4 = types.KeyboardButton("Кинетическая энергия")
+        btn5 = types.KeyboardButton("Потенциальная энергия")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, btn3, btn4, btn5, back)
+        bot.send_message(message.chat.id, text="Выберите формулу", reply_markup=markup)
+
+    elif message.text == "Оптика":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Энергия фотона(1)")
+        btn2 = types.KeyboardButton("Энергия фотона(2)")
+        btn3 = types.KeyboardButton("Энергия фотона(3)")
+        btn4 = types.KeyboardButton("Энергия фотона(4)")
+        btn5 = types.KeyboardButton("Импульс фотона")
+        btn6 = types.KeyboardButton("Фотоэффект: красный предел(1)")
+        btn7 = types.KeyboardButton("Фотоэффект: красный предел: (2)")
+        btn8 = types.KeyboardButton("Вогнутое сферическое зеркало: фокусное расстояние")
+        btn9 = types.KeyboardButton("Закон преломления света")
+        btn10 = types.KeyboardButton("Абсолютный показатель преломления")
+        btn11 = types.KeyboardButton("Преломляющая способность линзы")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, back)
+        bot.send_message(message.chat.id, text="Выберите формулу", reply_markup=markup)
+
+    elif message.text == "Формула Эйнштейна":
+        bot.send_message(message.chat.id, text="Формула: ΔE = Δm*c2")
+        mes = bot.send_message(message.chat.id, text="Введите изменение массы")
+        bot.register_next_step_handler(mes, umnoj1)
+        global number2
+        number2 = float(c2)
+        skull2 = "Изменение энергии ="
+        skull3 = "Дж"
+        
+    elif message.text == "Второй постулат Бора (правило частот)":
+        bot.send_message(message.chat.id, text="Формула: v=(E-E)/h")
+        mes = bot.send_message(message.chat.id, text="Введите энергию(1)")
+        bot.register_next_step_handler(mes, bor1)
+        
+    elif message.text == "Квантование электронных орбит":
+        bot.send_message(message.chat.id, text="Формула: m = (h*n)/(2П*Vn*rn)")
+        mes = bot.send_message(message.chat.id, text="Введите скорость")
+        bot.register_next_step_handler(mes, kvorb1)
+        
+    elif message.text == "Скорость электрона на боровской орбите":
+        bot.send_message(message.chat.id, text="Формула: V = e^2/(4П*ε0*n*h)")
+        mes = bot.send_message(message.chat.id, text="Введите заряд электрона")
+        bot.register_next_step_handler(mes, skorelorb1)
+        
+    elif message.text == "Импульс (2 закон Ньютона)":
+        bot.send_message(message.chat.id, text="Формула: p=f*t")
+        mes = bot.send_message(message.chat.id, text="Введите силу ")
+        bot.register_next_step_handler(mes, operation1)
+        skull = "время"
+        skull2 = "Импульс ="
+        skull3 = "кг*м/с"
+        
+    elif message.text == "Механическая работа и угол":
+        bot.send_message(message.chat.id, text="Формула: A = F * S * cos(a)")
+        mes = bot.send_message(message.chat.id, text="Введите силу ")
+        bot.register_next_step_handler(mes, rabcos1)
+        
+    elif message.text == "Мощность":
+        bot.send_message(message.chat.id, text="Формула: N = A / t")
+        mes = bot.send_message(message.chat.id, text="Введите работу")
+        bot.register_next_step_handler(mes, delenie1)
+        skull = "время"
+        skull2 = "Мощность ="
+        skull3 = "Вт"
+        
+    elif message.text == "Кинетическая энергия":
+        bot.send_message(message.chat.id, text="Формула: Ek = (m * V^2)/2")
+        mes = bot.send_message(message.chat.id, text="Введите массу")
+        bot.register_next_step_handler(mes, kinerg1)
+        
+    elif message.text == "Потенциальная энергия":
+        bot.send_message(message.chat.id, text="Формула: Ep = m * g * h")
+        mes = bot.send_message(message.chat.id, text="Введите массу")
+        bot.register_next_step_handler(mes, poterg1)
+        
+    elif message.text == "Энергия фотона(1)":
+        bot.send_message(message.chat.id, text="Формула: E = m*c2")
+        mes = bot.send_message(message.chat.id, text="Введите массу")
+        bot.register_next_step_handler(mes, umnoj1)
+        global number2
+        number2 = float(h)
+        skull2 = "Энергия ="
+        skull3 = "Дж"
+        
+    elif message.text == "Энергия фотона(2)":
+        bot.send_message(message.chat.id, text="Формула: E = h*v")
+        mes = bot.send_message(message.chat.id, text="Введите частоту")
+        bot.register_next_step_handler(mes, umnoj1)
+        global number2
+        number2 = float(h)
+        skull2 = "Энергия ="
+        skull3 = "Дж"
+        
+    elif message.text == "Энергия фотона(3)":
+        bot.send_message(message.chat.id, text="Формула: E = (h*c)/λ")
+        mes = bot.send_message(message.chat.id, text="Введите длину волны")
+        bot.register_next_step_handler(mes, enfot1)
+        skull2 = "Энергия ="
+        skull3 = "Дж"
+        
+    elif message.text == "Энергия фотона(4)":
+        bot.send_message(message.chat.id, text="Формула: E = h*w")
+        mes = bot.send_message(message.chat.id, text="Введите угловую скорость")
+        bot.register_next_step_handler(mes, umnoj1)
+        global number2
+        number2 = float(hmal)
+        skull2 = "Изменение энергии ="
+        skull3 = "Дж"
+        
+    elif message.text == "Импульс фотона":
+        bot.send_message(message.chat.id, text="Формула: p = m*c")
+        mes = bot.send_message(message.chat.id, text="Введите массу")
+        bot.register_next_step_handler(mes, umnoj1)
+        global number2
+        number2 = float(c)
+        skull2 = "Импульс ="
+        skull3 = "кг*м/с"
+        
+    elif message.text == "Фотоэффект: красный предел(1)":
+        bot.send_message(message.chat.id, text="Aвых = h*v")
+        mes = bot.send_message(message.chat.id, text="Введите высоту")
+        bot.register_next_step_handler(mes, operation1)
+        skull = "частоту"
+        skull2 = "Работа выхода ="
+        skull3 = "эВ"
+        
+    elif message.text == "Фотоэффект: красный предел(2)":
+        bot.send_message(message.chat.id, text="Формула: Aвых = (h*c)/λ")
+        mes = bot.send_message(message.chat.id, text="Введите длину волны")
+        bot.register_next_step_handler(mes, enfot1)
+        skull2 = "Работа выхода ="
+        skull3 = "эВ"
+        
+    elif message.text == "Вогнутое сферическое зеркало: фокусное расстояние":
+        bot.send_message(message.chat.id, text="Формула: F = R/2")
+        mes = bot.send_message(message.chat.id, text="Введите радиус кривизны линзы")
+        bot.register_next_step_handler(mes, fokrast1)
+        
+    elif message.text == "Закон преломления света":
+        bot.send_message(message.chat.id, text="Формула: n = sin(a)/sin(y)")
+        mes = bot.send_message(message.chat.id, text="Введите первый угол в градусах")
+        bot.register_next_step_handler(mes, prelomsvet1)
+        
+    elif message.text == "Абсолютный показатель преломления":
+        bot.send_message(message.chat.id, text="Формула: n = c/V")
+        mes = bot.send_message(message.chat.id, text="Введите скорость света в окружающей среде")
+        bot.register_next_step_handler(mes, absprel1)
+        
+    elif message.text == "Преломляющая способность линзы":
+        bot.send_message(message.chat.id, text="Формула: D = 1/F")
+        mes = bot.send_message(message.chat.id, text="Введите фокусное расстояние")
+        bot.register_next_step_handler(mes, prelomlinz1)
+
+
+@bot.message_handler(content_types=['text'])
+def umnoj1(message):
+    global number1
+    number1 = float(message.text)
+    bot.send_message(message.chat.id, text=f"{skull2} {number2 * number1} {skull3}")
+
+
+@bot.message_handler(content_types=['text'])
+def bor1(message):
+    global number1
+    number1 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите энергию(2)")
+    bot.register_next_step_handler(mes, bor2)
+
+
+@bot.message_handler(content_types=['text'])
+def bor2(message):
+    global number2
+    number2 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Частота = {(number1 - number2)/h} Гц")
+
+
+@bot.message_handler(content_types=['text'])
+def kvorb1(message):
+    global number1
+    number1 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите радиус ")
+    bot.register_next_step_handler(mes, kvorb2)
+
+
+@bot.message_handler(content_types=['text'])
+def kvorb2(message):
+    global number2
+    number2 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите квантовое число")
+    bot.register_next_step_handler(mes, kvorb3)
+
+
+@bot.message_handler(content_types=['text'])
+def kvorb3(message):
+    global number3
+    number3 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Масса = {(number3 * h)/(number2 * number1 * 2 * pi)} а. е. м.")
+
+
+@bot.message_handler(content_types=['text'])
+def rabcos1(message):
+    global number1
+    number1 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите расстояние перемещения")
+    bot.register_next_step_handler(mes, rabcos2)
+
+
+@bot.message_handler(content_types=['text'])
+def rabcos2(message):
+    global number2
+    number2 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите угол между направлением силы и направлением перемещения (в градусах)")
+    bot.register_next_step_handler(mes, kinerg2)
+
+
+@bot.message_handler(content_types=['text'])
+def rabcos3(message):
+    global number3
+    number3 = float(message.text)
+    number3 = math.cos(number3)
+    bot.send_message(message.chat.id, text=f"Работа = {number1 * number2 * number3} Дж")
+
+
+@bot.message_handler(content_types=['text'])
+def kinerg1(message):
+    global number1
+    number1 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите скорость")
+    bot.register_next_step_handler(mes, kinerg2)
+
+
+@bot.message_handler(content_types=['text'])
+def kinerg2(message):
+    global number2
+    number2 = float(message.text)
+    number2 = number2 ** 2
+    bot.send_message(message.chat.id, text=f"Кинетическая энергия = {(number1 * number2)/2} Дж")
+
+
+@bot.message_handler(content_types=['text'])
+def poterg1(message):
+    global number1
+    number1 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите высоту")
+    bot.register_next_step_handler(mes, poterg2)
+
+
+@bot.message_handler(content_types=['text'])
+def poterg2(message):
+    global number2
+    number2 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Кинетическая энергия = {number1 * number2 * g} Дж")
+
+
+@bot.message_handler(content_types=['text'])
+def enfot1(message):
+    global number1
+    number1 = float(message.text)
+    bot.send_message(message.chat.id, text=f"{skull2} {(c * h)/number1} {skull3}")
+
+
+@bot.message_handler(content_types=['text'])
+def skorelorb1(message):
+    global number1
+    number1 = float(message.text)
+    number1 = number1 ** 2
+    mes = bot.send_message(message.chat.id, text=f"Введите квантовое число")
+    bot.register_next_step_handler(mes, skorelorb2)
+
+
+@bot.message_handler(content_types=['text'])
+def skorelorb2(message):
+    global number2
+    number2 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Скорость = {number1/(pi * 4 * number2 * e0 * hmal)} м/с")
+
+
+@bot.message_handler(content_types=['text'])
+def fokrast1(message):
+    global number1
+    number1 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Фокусное расстояние = {number1/2} м")
+
+
+@bot.message_handler(content_types=['text'])
+def prelomsvet1(message):
+    global number1
+    number1 = float(message.text)
+    number1 = math.sin(number1)
+    mes = bot.send_message(message.chat.id, text=f"Введите второй угол в градусах")
+    bot.register_next_step_handler(mes, prelomsvet2)
+
+
+@bot.message_handler(content_types=['text'])
+def prelomsvet2(message):
+    global number2
+    number2 = float(message.text)
+    number2 = math.sin(number2)
+    bot.send_message(message.chat.id, text=f"показатель преломления = {number1/number2}")
+
+
+@bot.message_handler(content_types=['text'])
+def absprel1(message):
+    global number1
+    number1 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Абсолютный показатель преломления = {c / number1}")
+
+
+@bot.message_handler(content_types=['text'])
+def prelomlinz1(message):
+    global number1
+    number1 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Преломляющая способность линзы = {1 / number1} дптр")
