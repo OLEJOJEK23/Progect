@@ -22,7 +22,9 @@ c2 = 299792458**2
 h = 6.63 * (10**(-34))
 hmal = (6.63 * (10 ** (-34))) / (2 * pi)
 e0 = 8.86 * (10**(-12))
-
+k1 = 9 * 10 ** 9
+ε = 1
+ε0 = 8.85 * 10 ** -12
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -122,13 +124,50 @@ def func(message):
         markup.add(b1, b2, btn3, btn4, btn5, btn6, btn7, btn8, btn10, btn11, btn12, btn13, btn14, btn15, b, back)
         bot.send_message(message.chat.id, text="Выберите формулу", reply_markup=markup)
 
+    elif message.text == "Электростатика":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Закон Кулона")
+        btn2 = types.KeyboardButton("Плотность энергии электрического поля")
+        btn3 = types.KeyboardButton("Потенциал электрического поля (1)")
+        btn4 = types.KeyboardButton("Потенциал электрического поля (2)")
+        btn5 = types.KeyboardButton("Работа в электрическом поле (1)")
+        btn6 = types.KeyboardButton("Работа в электрическом поле (2)")
+        btn7 = types.KeyboardButton("Электрическая емкость двух проводников")
+        btn8 = types.KeyboardButton("Электрическая ёмкость плоского конденсатора")
+        btn9 = types.KeyboardButton("Потенциальная энергия заряженного плоского конденсатора")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, back)
+        bot.send_message(message.chat.id, text="Выберите формулу", reply_markup=markup)
+
+    elif message.text == "Квантовая физика":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Формула Планка")
+        btn2 = types.KeyboardButton("Энергия одного фотона")
+        btn3 = types.KeyboardButton("Уравнение Эйнштейна для фотоэффекта")
+        btn4 = types.KeyboardButton("Импульс фотона (1)")
+        btn5 = types.KeyboardButton("Импульс фотона (2)")
+        btn6 = types.KeyboardButton("Масса фотона (1)")
+        btn7 = types.KeyboardButton("Масса фотона (2)")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, btn3, btn4, btn5, btn6, btn7, back)
+        bot.send_message(message.chat.id, text="Выберите формулу", reply_markup=markup)
+
+    elif message.text == "Основы СТО":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Закон сложения скоростей")
+        btn2 = types.KeyboardButton("Длина тела")
+        btn3 = types.KeyboardButton("Промежуток времени")
+        btn4 = types.KeyboardButton("Энергия покоя")
+        btn5 = types.KeyboardButton("Полная энергия")
+        btn6 = types.KeyboardButton("Релятивистский импульс")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, btn3, btn4, btn5, btn6, back)
+        bot.send_message(message.chat.id, text="Выберите формулу", reply_markup=markup)
+
     elif message.text == "Механика жидкостей":
         bot.send_message(message.chat.id, text="Поздороваться с читателями")
 
     elif message.text == "Колебания и волны":
-        bot.send_message(message.chat.id, text="Поздороваться с читателями")
-
-    elif message.text == "Электростатика":
         bot.send_message(message.chat.id, text="Поздороваться с читателями")
 
     elif message.text == "Постоянный ток":
@@ -138,12 +177,6 @@ def func(message):
         bot.send_message(message.chat.id, text="Поздороваться с читателями")
 
     elif message.text == "Индукция":
-        bot.send_message(message.chat.id, text="Поздороваться с читателями")
-
-    elif message.text == "Квантовая физика":
-        bot.send_message(message.chat.id, text="Поздороваться с читателями")
-
-    elif message.text == "Основы СТО":
         bot.send_message(message.chat.id, text="Поздороваться с читателями")
 
     elif message.text == "Путь,время,скорость":
@@ -457,6 +490,7 @@ def func(message):
         button2 = types.KeyboardButton("Конвертор")
         markup.add(button1, button2)
         bot.send_message(message.chat.id, text="Вы вернулись в главное меню", reply_markup=markup)
+
     elif message.text == "Ядерные реакции":
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton("Формула Эйнштейна")
@@ -623,6 +657,128 @@ def func(message):
         bot.send_message(message.chat.id, text="Формула: D = 1/F")
         mes = bot.send_message(message.chat.id, text="Введите фокусное расстояние")
         bot.register_next_step_handler(mes, prelomlinz1)
+
+    elif message.text == "Закон Кулона":
+        bot.send_message(message.chat.id, text="Формула: F = k * (|q1| * |q2|) / r^2")
+        mes = bot.send_message(message.chat.id, text="Введите первый заряд")
+        bot.register_next_step_handler(mes, kulon1)
+
+    elif message.text == "Плотность энергии электрического поля":
+        bot.send_message(message.chat.id, text="Формула: Wp = Fd")
+        mes = bot.send_message(message.chat.id, text="Введите силу")
+        bot.register_next_step_handler(mes, operation1)
+        skull = "расстояние между пластин"
+        skull2 = "Плотность энергии электрического поля ="
+        skull3 = "Дж/м^3"
+
+    elif message.text == "Потенциал электрического поля (1)":
+        bot.send_message(message.chat.id, text="Формула: φ = Ed")
+        mes = bot.send_message(message.chat.id, text="Введите напряжённость электрического поля")
+        bot.register_next_step_handler(mes, operation1)
+        skull = "расстояние между пластин"
+        skull2 = "Потенциал электрического поля ="
+        skull3 = "B"
+
+    elif message.text == "Потенциал электрического поля (2)":
+        bot.send_message(message.chat.id, text="Формула: φ = W / q")
+        mes = bot.send_message(message.chat.id, text="Введите потенциальную энергию заряда")
+        bot.register_next_step_handler(mes, delenie1)
+        skull = "заряд"
+        skull2 = "Потенциал электрического поля ="
+        skull3 = "B"
+
+    elif message.text == "Работа в электрическом поле (1)":
+        bot.send_message(message.chat.id, text="Формула: A = W1 - W2")
+        mes = bot.send_message(message.chat.id, text="Введите начальную потенциальную энергию")
+        bot.register_next_step_handler(mes, rabota11)
+
+    elif message.text == "Работа в электрическом поле (2)":
+        bot.send_message(message.chat.id, text="Формула: A = q(φ1 - φ2)")
+        mes = bot.send_message(message.chat.id, text="Введите заряд")
+        bot.register_next_step_handler(mes, rabota21)
+
+    elif message.text == "Электрическая емкость двух проводников":
+        bot.send_message(message.chat.id, text="Формула: C = q / U")
+        mes = bot.send_message(message.chat.id, text="Введите заряд")
+        bot.register_next_step_handler(mes, delenie1)
+        skull = "напряжение"
+        skull2 = "Электрическая емкость двух проводников ="
+        skull3 = "Ф"
+
+    elif message.text == "Электрическая ёмкость плоского конденсатора":
+        bot.send_message(message.chat.id, text="Формула: C = ε * ε0 * S / d")
+        mes = bot.send_message(message.chat.id, text="Введите площадь")
+        bot.register_next_step_handler(mes, ploscond1)
+
+    elif message.text == "Потенциальная энергия заряженного плоского конденсатора":
+        bot.send_message(message.chat.id, text="Формула: W = (C * U^2) / 2")
+        mes = bot.send_message(message.chat.id, text="Введите электрическую емкость")
+        bot.register_next_step_handler(mes, potenploscond1)
+
+    elif message.text == "Формула Планка":
+        bot.send_message(message.chat.id, text="Формула: E = h * v")
+        mes = bot.send_message(message.chat.id, text="Введите частоту")
+        bot.register_next_step_handler(mes, fplanka1)
+
+    elif message.text == "Энергия одного фотона":
+        bot.send_message(message.chat.id, text="Формула: E = (h * с) / λ")
+        mes = bot.send_message(message.chat.id, text="Введите длину волны")
+        bot.register_next_step_handler(mes, energiaodnogofotona1)
+
+    elif message.text == "Уравнение Эйнштейна для фотоэффекта":
+        bot.send_message(message.chat.id, text="Формула: E = Aвых + (m * v^2) / 2")
+        mes = bot.send_message(message.chat.id, text="Введите работу выхода")
+        bot.register_next_step_handler(mes, uravfoto1)
+
+    elif message.text == "Импульс фотона (1)":
+        bot.send_message(message.chat.id, text="Формула: p = (h * v) / c")
+        mes = bot.send_message(message.chat.id, text="Введите частоту")
+        bot.register_next_step_handler(mes, impulsfoto1)
+
+    elif message.text == "Импульс фотона (2)":
+        bot.send_message(message.chat.id, text="Формула: p = h / λ")
+        mes = bot.send_message(message.chat.id, text="Введите длину волны")
+        bot.register_next_step_handler(mes, impulsfoto2)
+
+    elif message.text == "Масса фотона (1)":
+        bot.send_message(message.chat.id, text="Формула: m = (h * v) / c^2")
+        mes = bot.send_message(message.chat.id, text="Введите частоту")
+        bot.register_next_step_handler(mes, massfoto1)
+
+    elif message.text == "Масса фотона (2)":
+        bot.send_message(message.chat.id, text="Формула: m = h / (λ * c)")
+        mes = bot.send_message(message.chat.id, text="Введите длину волны")
+        bot.register_next_step_handler(mes, massfoto2)
+
+    elif message.text == "Закон сложения скоростей":
+        bot.send_message(message.chat.id, text="Формула: v = (v1 + v2) / 1 + (v1 * v2) / c^2")
+        mes = bot.send_message(message.chat.id, text="Введите скорость первого тела")
+        bot.register_next_step_handler(mes, sloshskor1)
+
+    elif message.text == "Длина тела":
+        bot.send_message(message.chat.id, text="Формула: l1 = l * √(1 - v^2 / c^2)")
+        mes = bot.send_message(message.chat.id, text="Введите собственную длину")
+        bot.register_next_step_handler(mes, dlinatela1)
+
+    elif message.text == "Промежуток времени":
+        bot.send_message(message.chat.id, text="Формула: t1 = t / √(1 - v^2 / c^2)")
+        mes = bot.send_message(message.chat.id, text="Введите собственное время")
+        bot.register_next_step_handler(mes, promeshvr1)
+
+    elif message.text == "Энергия покоя":
+        bot.send_message(message.chat.id, text="Формула: E = m * c^2")
+        mes = bot.send_message(message.chat.id, text="Введите массу")
+        bot.register_next_step_handler(mes, energypoko1)
+
+    elif message.text == "Полная энергия":
+        bot.send_message(message.chat.id, text="Формула: E = m * c^2 / √(1 - v^2 / c^2)")
+        mes = bot.send_message(message.chat.id, text="Введите массу")
+        bot.register_next_step_handler(mes, energyfull1)
+
+    elif message.text == "Релятивистский импульс":
+        bot.send_message(message.chat.id, text="Формула: p = (E * v) / c^2")
+        mes = bot.send_message(message.chat.id, text="Введите энергию")
+        bot.register_next_step_handler(mes, relimpuls1)
 
     else:
         bot.send_message(message.chat.id, text="На такую команду я не запрограммирован..")
@@ -1212,6 +1368,274 @@ def prelomlinz1(message):
     global number1
     number1 = float(message.text)
     bot.send_message(message.chat.id, text=f"Преломляющая способность линзы = {1 / number1} дптр")
+
+
+@bot.message_handler(content_types=['text'])
+def operation1(message):
+    global number1
+    number1 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите {skull}")
+    bot.register_next_step_handler(mes, multiply2)
+
+
+@bot.message_handler(content_types=['text'])
+def multiply2(message):
+    global number2
+    number2 = float(message.text)
+    bot.send_message(message.chat.id, text=f"{skull2} {number2 * number1} {skull3}")
+
+
+@bot.message_handler(content_types=['text'])
+def delenie1(message):
+    global number1
+    number1 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите {skull}")
+    bot.register_next_step_handler(mes, delenie2)
+
+
+@bot.message_handler(content_types=['text'])
+def delenie2(message):
+    global number2
+    number2 = float(message.text)
+    bot.send_message(message.chat.id, text=f"{skull2} {number1 / number2} {skull3}")
+
+
+@bot.message_handler(content_types=['text'])
+def kulon1(message):
+    global number1
+    number1 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите второй заряд")
+    bot.register_next_step_handler(mes, kulon2)
+
+
+@bot.message_handler(content_types=['text'])
+def kulon2(message):
+    global number2
+    number2 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите расстояние между зарядами")
+    bot.register_next_step_handler(mes, kulon3)
+
+
+@bot.message_handler(content_types=['text'])
+def kulon3(message):
+    global number3
+    number3 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Сила = {(k * abs(number1 * number2)) / number3 ** 2} H")
+
+
+@bot.message_handler(content_types=['text'])
+def rabota11(message):
+    global number1
+    number1 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите конечную потенциальную энергию")
+    bot.register_next_step_handler(mes, rabota12)
+
+
+@bot.message_handler(content_types=['text'])
+def rabota12(message):
+    global number2
+    number2 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Работа = {number1 - number2} Дж")
+
+
+@bot.message_handler(content_types=['text'])
+def rabota21(message):
+    global number1
+    number1 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите начальную потенциальную энергию")
+    bot.register_next_step_handler(mes, rabota22)
+
+
+@bot.message_handler(content_types=['text'])
+def rabota22(message):
+    global number2
+    number2 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите конечную потенциальную энергию")
+    bot.register_next_step_handler(mes, rabota23)
+
+
+@bot.message_handler(content_types=['text'])
+def rabota23(message):
+    global number3
+    number3 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Работа = {number1 * (number2 - number3)} Дж")
+
+
+@bot.message_handler(content_types=['text'])
+def ploscond1(message):
+    global number1
+    number1 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите расстояние между пластин")
+    bot.register_next_step_handler(mes, ploscond2)
+
+
+@bot.message_handler(content_types=['text'])
+def ploscond2(message):
+    global number2
+    number2 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Электрическая ёмкость плоского конденсатора = {ε * ε0 * number1 / number2} Ф")
+
+
+@bot.message_handler(content_types=['text'])
+def potenploscond1(message):
+    global number1
+    number1 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите напряжение")
+    bot.register_next_step_handler(mes, potenploscond2)
+
+
+@bot.message_handler(content_types=['text'])
+def potenploscond2(message):
+    global number2
+    number2 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Потенциальная энергия заряженного плоского конденсатора = {(number1 * number2 ** 2) / 2} Дж")
+
+
+@bot.message_handler(content_types=['text'])
+def fplanka1(message):
+    global number1
+    number1 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Энергия фотона = {number1 * h} Дж")
+
+
+@bot.message_handler(content_types=['text'])
+def energiaodnogofotona1(message):
+    global number1
+    number1 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Энергия одного фотона = {(h * c) / number1} Дж")
+
+
+@bot.message_handler(content_types=['text'])
+def uravfoto1(message):
+    global number1
+    number1 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите массу")
+    bot.register_next_step_handler(mes, uravfoto2)
+
+
+@bot.message_handler(content_types=['text'])
+def uravfoto2(message):
+    global number2
+    number2 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите частоту")
+    bot.register_next_step_handler(mes, uravfoto3)
+
+
+@bot.message_handler(content_types=['text'])
+def uravfoto3(message):
+    global number3
+    number3 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Энергия одного фотона = {number1 + (number2 * number3 ** 2) / 2} Дж")
+
+
+@bot.message_handler(content_types=['text'])
+def impulsfoto1(message):
+    global number1
+    number1 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Импульс фотона = {(h * number1) / c} (кг * м) / с")
+
+
+@bot.message_handler(content_types=['text'])
+def impulsfoto2(message):
+    global number1
+    number1 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Импульс фотона = {h / number1} (кг * м) / с")
+
+
+@bot.message_handler(content_types=['text'])
+def massfoto1(message):
+    global number1
+    number1 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Масса фотона = {(h * number1) / c ** 2} кг")
+
+
+@bot.message_handler(content_types=['text'])
+def massfoto2(message):
+    global number1
+    number1 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Масса фотона = {h / (number1 * c)} кг")
+
+
+@bot.message_handler(content_types=['text'])
+def sloshskor1(message):
+    global number1
+    number1 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите скорость второго тела")
+    bot.register_next_step_handler(mes, sloshskor2)
+
+
+@bot.message_handler(content_types=['text'])
+def sloshskor2(message):
+    global number2
+    number2 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Скорость = {(number1 + number2) / 1 + (number1 * number2 / c ** 2)} м/с")
+
+
+@bot.message_handler(content_types=['text'])
+def dlinatela1(message):
+    global number1
+    number1 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите скорость")
+    bot.register_next_step_handler(mes, dlinatela2)
+
+
+@bot.message_handler(content_types=['text'])
+def dlinatela2(message):
+    global number2
+    number2 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Длина движущегося тела = {number1 * (1 - number2 ** 2 / c ** 2) ** 0.5} м")
+
+
+@bot.message_handler(content_types=['text'])
+def promeshvr1(message):
+    global number1
+    number1 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите время")
+    bot.register_next_step_handler(mes, promeshvr2)
+
+
+@bot.message_handler(content_types=['text'])
+def promeshvr2(message):
+    global number2
+    number2 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Промежуток времени = {number1 / (1 - number2 ** 2 / c ** 2) ** 0.5} с")
+
+
+@bot.message_handler(content_types=['text'])
+def energypoko1(message):
+    global number1
+    number1 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Энергия покоя = {number1 * c ** 2} Дж")
+
+
+@bot.message_handler(content_types=['text'])
+def energyfull1(message):
+    global number1
+    number1 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите скорость")
+    bot.register_next_step_handler(mes, energyfull2)
+
+
+@bot.message_handler(content_types=['text'])
+def energyfull2(message):
+    global number2
+    number2 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Полная энергия = {number1 * c ** 2 / (1 - number2 ** 2 / c ** 2) ** 0.5} Дж")
+
+
+@bot.message_handler(content_types=['text'])
+def relimpuls1(message):
+    global number1
+    number1 = float(message.text)
+    mes = bot.send_message(message.chat.id, text=f"Введите скорость")
+    bot.register_next_step_handler(mes, relimpuls2)
+
+
+@bot.message_handler(content_types=['text'])
+def relimpuls2(message):
+    global number2
+    number2 = float(message.text)
+    bot.send_message(message.chat.id, text=f"Импульс = {number1 * number2 / c ** 2} Кг * м / с")
 
 
 bot.polling(none_stop=True)
