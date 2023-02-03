@@ -1,0 +1,88 @@
+Задание 3  а
+a = int(input("Введите а: "))
+b = int(input("Введите b: "))
+if (a % 2 == 0 and b % 2 != 0) or (a% 2 != 0 and b % 2 == 0):
+    print('1 из чисел чётное')
+else:
+    print("Это был тест на дурочка.Вы его провалили.")
+    
+Задание 3 б
+a = int(input("Введите а: "))
+b = int(input("Введите b: "))
+C = int(input("Введите с: "))
+if (a % 3 == 0 and b % 3 == 0 and C % 3 == 0):
+    print('Все числа кратны 3')
+else:
+    print("Это был тест на дурочка.Вы его провалили.")
+    
+Задание 2
+d = (int(input("Введите день недели: ")))
+match d:
+    case 1:
+        t = float(input("Введите время начала разговора: "))
+        if t<=0 or t>=24:exit()
+        if t >= 22 or t <= 8: discount = 0.2
+        dt = float(input("Введите время разговора в минутах: "))
+        s = float(input("Введите стоимость разговора за минуту: "))
+        discount = (dt * s * discount)
+        price = (dt * s) - discount
+        print(f"Цена разговора:{price} ")
+    case 2:
+        t = float(input("Введите время начала разговора: "))
+        if t <= 0 or t >= 24: exit()
+        if t >= 22 or t <= 8: discount = 0.2
+        dt = float(input("Введите время разговора в минутах: "))
+        s = float(input("Введите стоимость разговора за минуту: "))
+        discount = (dt * s * discount)
+        price = (dt * s) - discount
+        print(f"Цена разговора:{price} ")
+    case 3:
+        t = float(input("Введите время начала разговора: "))
+        if t <= 0 or t >= 24: exit()
+        if t >= 22 or t <= 8: discount = 0.2
+        dt = float(input("Введите время разговора в минутах: "))
+        s = float(input("Введите стоимость разговора за минуту: "))
+        discount = (dt * s * discount)
+        price = (dt * s) - discount
+        print(f"Цена разговора:{price} ")
+    case 4:
+        t = float(input("Введите время начала разговора: "))
+        if t <= 0 or t >= 24: exit()
+        if t >= 22 or t <= 8: discount = 0.2
+        dt = float(input("Введите время разговора в минутах: "))
+        s = float(input("Введите стоимость разговора за минуту: "))
+        discount = (dt * s * discount)
+        price = (dt * s) - discount
+        print(f"Цена разговора:{price} ")
+    case 5:
+        t = float(input("Введите время начала разговора: "))
+        if t <= 0 or t >= 24: exit()
+        if t >= 22 or t <= 8: discount = 0.2
+        dt = float(input("Введите время разговора в минутах: "))
+        s = float(input("Введите стоимость разговора за минуту: "))
+        discount = (dt * s * discount)
+        price = (dt * s) - discount
+        print(f"Цена разговора:{price} ")
+    case 6:
+        t = float(input("Введите время начала разговора: "))
+        discount = 0.1
+        if t <= 0 or t >= 24: exit()
+        if t >= 22 or t <= 8: discount = 0.2 + discount
+        dt = float(input("Введите время разговора в минутах: "))
+        s = float(input("Введите стоимость разговора за минуту: "))
+        discount = (dt * s * discount)
+        p1 = (((dt - 222) * s) - discount)
+        discount1 = (222 * s * 0.1)
+        p2 = (222 * s) - discount1
+        price = p2 + p1
+        print(f"Цена разговора: {price} ")
+    case 7:
+        t = float(input("Введите время начала разговора: "))
+        discount = 0.1
+        if t <= 0 or t >= 24: exit()
+        if t >= 22 or t <= 8: discount = 0.2 + discount
+        dt = float(input("Введите время разговора в минутах: "))
+        s = float(input("Введите стоимость разговора за минуту: "))
+        discount = (dt*s * discount)
+        price = (dt * s) - discount
+        print(f"Цена разговора:{price} ")
