@@ -1,0 +1,205 @@
+Задача 1
+i = 0
+d = int(input("Введите день недели(1-7): "))
+t = float(input("Введите время начала разговора: "))
+while t > 0:
+    i = i + 1 # перевод в минуты
+    t = t - 1 # перевод в минуты
+if t + 1 > 0.6: # перевод в минуты
+    print("Неправильное время") # перевод в минуты
+    exit() # перевод в минуты
+t = round(t, 2) # перевод в минуты
+i = (i - 1) * 60 # перевод в минуты
+t = ((t + 1) * 100) + i # перевод в минуты
+dt = int(input("Введите продолжительность разговора: "))
+s = float(input("Введите стоимость минуты разговора: "))
+price = 0
+match (d):
+    case 1:
+        for dt in range(dt, 0, -1):
+            if t == 24 * 60:
+                t = (t - 24 * 60)
+                price = price + (s - (s * 0.2))
+            else:
+                if t > 22*60 or t < 8*60:
+                    disc = 0.2
+                    price = price + (s - (s * disc))
+                else:
+                    disc = 0
+                    price = price + (s - (s * disc))
+                t = t + 1
+        print(round(price, 2))
+    case 2:
+        for dt in range(dt, 0, -1):
+            if t == 24 * 60:
+                t = (t - 24 * 60)
+                price = price + (s - (s * 0.2))
+            else:
+                if t > 22 * 60 or t < 8 * 60:
+                    disc = 0.2
+                    price = price + (s - (s * disc))
+                else:
+                    disc = 0
+                    price = price + (s - (s * disc))
+                t = t + 1
+        print(round(price, 2))
+    case 3:
+        for dt in range(dt, 0, -1):
+            if t == 24 * 60:
+                t = (t - 24 * 60)
+                price = price + (s - (s * 0.2))
+            else:
+                if t > 22 * 60 or t < 8 * 60:
+                    disc = 0.2
+                    price = price + (s - (s * disc))
+                else:
+                    disc = 0
+                    price = price + (s - (s * disc))
+                t = t + 1
+        print(round(price, 2))
+    case 4:
+        for dt in range(dt, 0, -1):
+            if t == 24 * 60:
+                t = (t - 24 * 60)
+                price = price + (s - (s * 0.2))
+            else:
+                if t > 22 * 60 or t < 8 * 60:
+                    disc = 0.2
+                    price = price + (s - (s * disc))
+                else:
+                    disc = 0
+                    price = price + (s - (s * disc))
+                t = t + 1
+        print(round(price, 2))
+    case 5:
+        for dt in range(dt, 0, -1):
+            if t == 24 * 60:
+                t = (t - 24 * 60)
+                price = price + (s - (s * 0.2))
+            else:
+                if t > 22 * 60 or t < 8 * 60:
+                    disc = 0.2
+                    price = price + (s - (s * disc))
+                else:
+                    disc = 0
+                    price = price + (s - (s * disc))
+                t = t + 1
+        print(round(price, 2))
+    case 6:
+        for dt in range(dt, 0, -1):
+            if t == 24 * 60:
+                t = (t - 24 * 60)
+                price = price + (s - (s * 0.3))
+            else:
+                if t > 22 * 60 or t < 8 * 60:
+                    disc1 = 0.9
+                    disc2 = 0.8
+                    price = price + (s * disc1 * disc2)
+                else:
+                    disc1 = 0.9
+                    price = price + (s * disc1)
+                t = t + 1
+        print(round(price, 2))
+    case 7:
+        for dt in range(dt, 0, -1):
+            if t == 24 * 60:
+                t = (t - 24 * 60)
+                price = price + (s - (s * 0.3))
+            else:
+                if t > 22 * 60 or t < 8 * 60:
+                    disc1 = 0.9
+                    disc2 = 0.8
+                    price = price + (s * disc1 * disc2)
+                else:
+                    disc1 = 0.9
+                    price = price + (s * disc1)
+                t = t + 1
+        print(round(price, 2))
+        
+        
+        
+Задача 3
+god = int(input("Введите год до 2000: "))
+era = int(input("Выберите эру:1 - до н.э, 2 - н.э: "))
+if era != 1 and era != 2:
+    print("тест на дурочка пройден успешно")
+else:
+    if era == 1 or era == 2:
+        if god > 2000 or god <= 0:
+            print("тест на дурочка пройден успешно")
+            exit()
+if god % 4 == 0:
+    print("Год високосный")
+else:
+    print("Нет")
+    
+    
+Задача 4
+money = int(input("Введите количество денег: "))
+if money <= 0:
+    print("У вас нет денег")
+    exit()
+if money > 99:
+    print("Это уже рубли")
+    exit()
+ostat = money % 10
+if money in range(11, 20):
+    print(f"У вас есть {money} копеек")
+elif ostat == 1:
+    print(f"У вас есть {money} копейка")
+elif ostat in range(2, 5):
+    print(f"У вас есть {money} копейки")
+elif ostat in range(5, 10):
+    print(f"У вас есть {money} копеек")
+elif ostat == 0:
+    print(f"У вас есть {money} копеек")
+    
+ Задача 5
+ day = int(input("Введите день года: "))
+if day < 0 or day > 365:
+    print("НЕТ")
+else:
+    while day>=7:
+        day = day -7
+    if day == 0:
+        print("Воскресенье")
+    if day == 1:
+        print("Понедельник")
+    if day == 2:
+        print("Вторник")
+    if day == 3:
+        print("Отсылка на wednesday?")
+    if day == 4:
+        print("Сосдай")
+    if day == 5:
+        print("Фридай")
+    if day == 6:
+        print("Сатурдай")
+        
+ Задача 7
+ number = 1000
+for i in range(1, number + 1):
+    for k in range(i, number + 1):
+        z = i ** 2 + k ** 2
+        c = int(z ** 0.5)
+        if c <= number and c * c == z:
+            a = i
+            b = k
+            while a != 0 and b != 0:
+                if a > b:
+                    a = a % b
+                else:
+                    b = b % a
+            a += b
+            if a == 1:
+                print(i, k, c)
+                
+                
+  Задача 9
+  
+  import math
+e = math.e
+x = float(input("Введите x: "))
+y = float(input("Введите y: "))
+F = (((2 + y)**2 + math.sin(y+5)**(1/7))**0.5)/(math.log(x + 1,e) - y**3)
+print(F)
