@@ -176,6 +176,63 @@ else:
     if day == 6:
         print("Сатурдай")
         
+ Задача 6
+ 
+ d = int(input("Введите день рождения: "))
+if d>31 or d<=0:
+    exit(())
+n = int(input("Введите месяц рождения: "))
+if n>12 or n<=0:
+    exit()
+if d in range(21,32) and n == 3:
+    print("Овен")
+if d in range(1, 21) and n == 4:
+    print("Овен")
+if d in range(21,31) and n == 4:
+    print("Телец")
+if d in range(1,21) and n == 5:
+    print("Телец")
+if d in range(21,32) and n == 5:
+    print("Близнецы")
+if d in range(1,22) and n == 6:
+    print("Близнецы")
+if d in range(22,31) and n == 6:
+    print("Рак")
+if d in range(1,23) and n == 7:
+    print("Рак")
+if d in range(23,32) and n == 7:
+    print("Лев")
+if d in range(1,24) and n == 8:
+    print("Лев")
+if d in range(24,32) and n == 8:
+    print("Дева")
+if d in range(1, 24) and n == 9:
+    print("Дева")
+if d in range(24, 31) and n == 9:
+    print("Весы")
+if d in range(1,24) and n == 10:
+    print("Весы")
+if d in range(24,32) and n == 10:
+    print("Скорпион")
+if d in range(1,23) and n == 11:
+    print("Скорпион")
+if d in range(23,30) and n == 11:
+    print("Стрелец")
+if d in range(1,22) and n == 12:
+    print("Стрелец")
+if d in range(22,32) and n == 12:
+    print("Козерог")
+if d in range(1,22) and n == 1:
+    print("Козерог")
+if d in range(21,32) and n == 1:
+    print("Водолей")
+if d in range(1,19) and n == 2:
+    print("Водолей")
+if d in range(19,29) and n == 2:
+    print("Рыбы")
+if d in range(1,19) and n == 3:
+    print("Рыбы")
+        
  Задача 7
  number = 1000
 for i in range(1, number + 1):
@@ -194,6 +251,28 @@ for i in range(1, number + 1):
             if a == 1:
                 print(i, k, c)
                 
+   Задача 8
+   import random
+mas = []
+chitalka = 0
+for i in range(200):
+    chislo = random.randint(1,100)
+    mas.append(chislo)
+print(mas)
+while chitalka !=199:
+    for i in range(199):
+        chislov1 = mas[i]
+        chislov2 = mas[i+1]
+        if chislov1 > chislov2:
+            del mas[i]
+            mas.insert(i + 1, chislov1)
+    chitalka = chitalka + 1
+print(mas)
+
+
+
+
+                
                 
   Задача 9
   
@@ -203,3 +282,36 @@ x = float(input("Введите x: "))
 y = float(input("Введите y: "))
 F = (((2 + y)**2 + math.sin(y+5)**(1/7))**0.5)/(math.log(x + 1,e) - y**3)
 print(F)
+
+
+
+Задача 10 
+
+import math
+a = float(input("Введите a: "))
+b = float(input("Введите b: "))
+c = float(input("Введите c: "))
+D = b**2 - 4 * a * c
+if D == 0:
+    x = (-b)/2 * a
+    print(f"Ответ: {x}")
+if D < 0:
+    print("Нет корней")
+if D > 0:
+    x1 = (-b + math.sqrt(D))/(2 * a)
+    x2 = (-b - math.sqrt(D))/(2 * a)
+    print(f"Первый корень:{x1} \n Второй корень {x2}")
+ 
+ Задача 11
+ 
+ a = int(input("Введите а: "))
+b = int(input("Введите b: "))
+if a < b or a==b or a<0 or b < 0 or b == 0 or a == 0:
+    print("ХИХИХАХА")
+    exit()
+else:
+    result = a//b
+print(result)
+
+
+
