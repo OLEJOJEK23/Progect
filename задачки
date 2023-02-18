@@ -105,3 +105,61 @@ match (task):
                     list.insert(h - j - 1, n1)
             k = k + 1
         print(list)
+    case 8:
+        import random
+        list = []
+        k = 0
+        for i in range(20):
+            p = random.randint(-100, 100)
+            if p != 0:
+                list.append(p)
+        list.append(0)
+        print(list)
+        for i in range(len(list)-1):
+            num1 = list[i]
+            num2 = list[i + 1]
+            if (num1 > 0 and num2 < 0) or (num1 < 0 and num2 > 0):
+                k = k + 1
+        print(f'количество смен знаков: {k}')
+    case 9:
+        import random
+        list = []
+        k = 0
+        g = 0
+        pol_num = 0
+        otr_num = 0
+        sr_pol = 0
+        sr_otr = 0
+        n = int(input("Введите количество элементов списка: "))
+        for i in range(n):
+            p = random.randint(-100, 100)
+            if p != 0:
+                list.append(p)
+        list.append(-1000)
+        print(list)
+        for i in range(len(list)):
+            num = list[i]
+            if num > 0:
+                pol_num = pol_num + num
+                k = k + 1
+            elif num < 0:
+                otr_num = otr_num + num
+                g = g + 1
+        sr_pol = pol_num / k
+        sr_otr = otr_num / g
+        print(f"Среднее арифметическое положительных: {sr_pol}\nСреднее арифметическое отрицательных: {sr_otr}")
+    case 10:
+        import random
+        list = []
+        for i in range(3):
+            p = random.randint(-10, 10)
+            if p != 0:
+                list.append(p)
+        print(list)
+        n = len(list)
+        for i in range(n - 1):
+            for j in range(i + 1, n):
+                if list[i] == list[j]:
+                    print("Не все элементы уникальны")
+                    exit()
+        print("Все элементы уникальны")
