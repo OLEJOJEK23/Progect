@@ -1,0 +1,71 @@
+import random
+task = int(input("Введите задание: "))
+match(task):
+    case 1:
+        jfj = [0]
+        i = 1
+        k = 0
+        while (i != 10):
+            number = random.randint(-100, 100)
+            if number != 0:
+                jfj.insert(0, number)
+                i = i + 1
+        print(jfj)
+        for i in range(9):
+            lol = jfj[i]
+            lox = jfj[i + 1]
+            if lol < 0 and lox > 0:
+                k = k + 1
+            elif lol > 0 and lox < 0:
+                k = k + 1
+        print(f"Количество смен знака: {k}")
+    case 2:
+        jfj = [-1000]
+        otr = []
+        pol = []
+        i = 1
+        k = 0
+        kol = int(input("Введите количество чисел: "))
+        while (i != kol):
+            number = random.randint(-100, 100)
+            if number != 0:
+                jfj.insert(0, number)
+                i = i + 1
+        print(jfj)
+        for i in range(kol):
+            lol = jfj[i]
+            if lol <= 0:
+                otr.append(lol)
+            if lol >= 0:
+                pol.append(lol)
+        print(otr)
+        print(pol)
+        cym = 0
+        cem = 0
+        for i in range (len(otr)):
+            cym = cym + otr[i]
+        for i in range(len(pol)):
+            cem = cem + pol[i]
+        arifmotr = cym/len(otr)
+        arifmpol = cem/len(pol)
+        print(f"Арифметическое положительных:{arifmpol}")
+        print(f"Арифметическое отрицательных:{arifmotr}")
+    case 3:
+        jfj = []
+        kol = int(input("Введите количество чисел: "))
+        i = 0
+        while (i != kol):
+            number = random.randint(-100, 100)
+            jfj.append(number)
+            i = i + 1
+        n = len(jfj)
+        print(jfj)
+        for i in range (n-1):
+            for j in range(i + 1,n):
+                if jfj[i] == jfj[j]:
+                    print("Неуникальны")
+                    exit()
+        print("Уникальны")
+    case 4:
+        text = str(input("Введите текст: "))
+        print(text)
