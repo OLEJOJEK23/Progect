@@ -1,0 +1,89 @@
+task = int(input("Введите задание: "))
+match (task):
+    case 1:
+        god = int(input("Введите год от -2000 до 2000: "))
+        if -2000 <= god <= 2000:
+            if god % 4 == 0:
+                print("Год високосный")
+            else:
+                print("Нет")
+        else:
+            print('Написано же от -2000 до 2000')
+    case 2:
+        kop = int(input("Введите сколько у вас копеек: "))
+        ostatok = kop % 10
+        if 11 <= kop <= 19:
+            print(f"{kop} копеек")
+        elif ostatok == 1:
+            print(f"{kop} копейка")
+        elif 2 <= ostatok <= 4:
+            print(f"{kop} копейки")
+        elif 5 <= ostatok <= 9 or ostatok == 0:
+            print(f"{kop} копеек")
+        elif kop >= 100:
+            print("Вы богатый")
+        elif kop <= 0:
+            print("мало")
+    case 3:
+        day = int(input("Введите день года: "))
+        if day < 0 or day > 365:
+            print("Не то")
+        else:
+            while day>=7:
+                day = day -7
+            if day == 1:
+                print("ПН")
+            if day == 2:
+                print("ВТ")
+            if day == 3:
+                print("СР")
+            if day == 4:
+                print("ЧТ")
+            if day == 5:
+                print("ПТ")
+            if day == 6:
+                print("СБ")
+            if day == 7:
+                print("ВС")
+    case 4:
+        month = input("Введите месяц : ")
+        day = input("Введите день: ")
+
+        if (day >= "21" and day <= "31" and (month == "Март" or month == '3')) or (
+                (month == "Апрель" or month == '4') and day >= "1" and day <= "20"):
+            print("Знак зодиака: Овен")
+        elif (day >= "21" and day <= "30" and (month == "Апрель" or month == '4')) or (
+                (month == "Май" or month == '5') and day >= "1" and day <= "20"):
+            print("Знак зодиака: Телец")
+        elif (day >= '21' and day <= '31' and (month == 'Май' or month == '5')) or (
+                day >= "1" and day <= '21' and (month == 'Июнь' or month == '6')):
+            print("Знак зодиака: Близнецы")
+        elif (day >= '22' and day <= '30' and (month == 'Июнь' or month == '6')) or (
+                day >= '1' and day <= '22' and (month == "Июль" or month == '7')):
+            print('Знак зодиака: Рак')
+        elif (day >= "23" and day <= '31' and (month == 'Июль' or month == '7')) or (
+                day >= '1' and day <= '23 ' and (month == "Август" or month == '8')):
+            print('Знак зодиака: Лев')
+        elif (day >= '24' and day <= '31' and (month == 'Август' or month == '8')) or (
+                day >= '1' and day <= '23' and (month == 'Сентябрь' or month == '9')):
+            print('Знак зодиака: Дева')
+        elif (day >= '24' and day <= '30' and (month == 'Сентябрь' or month == '9')) or (
+                day >= '1' and day <= '23' and (month == "Октябрь" or month == '10')):
+            print('Знак зодиака: Весы')
+        elif (day >= '24' and day <= '31' and (month == 'Октябрь' or month == '10')) or (
+                day >= '1' and day <= '22' and (month == 'Ноябрь' or month == '11')):
+            print('Знак зодиака: Скорпион')
+        elif (day >= '23' and day <= '30' and (month == 'Ноябрь' or month == '11')) or (
+                day >= '1' and day <= '21' and (month == 'Декабрь' or month == '12')):
+            print('Знак зодиака: Стрелец')
+        elif (day >= '22' and day <= '31' and (month == 'Декабрь' or month == '12')) or (
+                day >= '1' and day <= '20' and (month == 'Январь' or month == '1')):
+            print('Знак зодиака: Козерог')
+        elif (day >= '21' and day <= '31' and (month == 'Январь' or month == '1')) or (
+                day >= '1' and day <= '18' and (month == 'Февраль' or month == '2')):
+            print('Знак зодиака: Водолей')
+        elif (day >= '19' and day <= '29' and (month == 'Февраль' or month == '2')) or (
+                day >= '1' and day <= '20' and (month == 'Март' or month == '3')):
+            print('Знак зодиака: Рыбы')
+        else:
+            print('Не то')
