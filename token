@@ -1,0 +1,2 @@
+token = '6220878951:AAGOwuvhBTDNNrFEdB14NyPULDqbd2X3jEI'
+bot = telebot.TeleBot(token)
