@@ -1,0 +1,11 @@
+from functools import wraps
+def restricted(func):
+    @wraps(func)
+    def wrapped(message):
+        user_id = message.chat.id
+        if user_id not in dostup:
+            bot.send_message(message.chat.id, text="Привет, {0.first_name},у тебя нет доступа.".format(message.from_user))
+            return
+        return func(message)
+    return wrapped
+@restricted
