@@ -1,0 +1,27 @@
+true_pass = "12345"
+
+@bot.message_handler(commands=['start'])
+def start(message):
+    markup = types.InlineKeyboardMarkup()
+    add = types.InlineKeyboardButton(text="Авторизация", callback_data= "pass")
+    markup.add(add)
+    bot.send_message(message.chat.id, "Привет! Это бот для слежки за сотрудниками.", reply_markup=markup)
+
+
+@bot.callback_query_handler(func = lambda call: True)
+def password(call):
+    if call.data == "pass":
+        sent = bot.send_message(call.message.chat.id, text="Введите пароль")
+        bot.register_next_step_handler(sent, login)
+    else:
+        bot.send_message(call.message.chat.id, text="Вы не авторизовались")
+
+def login(message):
+    global pass_user
+    pass_user = (message.text)
+    if hash(true_pass) == hash(pass_user):
+        sent = bot.send_message(message.chat.id, text="Вы авторизовались")
+        bot.register_next_step_handler(sent, [следующая функция])
+    else:
+        sent = bot.send_message(message.chat.id, text="Вы не авторизовались")
+        bot.register_next_step_handler(sent, start)
