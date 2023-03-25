@@ -1,0 +1,23 @@
+@bot.message_handler(commands=['start'])
+def start(message):
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    btn1 = types.KeyboardButton("Общие метрики по компании")
+    markup.add(btn1)
+    bot.send_message(message.chat.id, "Привет! Это бот для слежки за сотрудниками.", reply_markup=markup)
+
+
+@bot.message_handler(content_types=['text'])
+def func(message):
+    if message.text == "Конвертор":
+        bot.send_message(message.chat.id, text="https://bbf.ru/converter/")
+    elif message.text == "Общие метрики по компании":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard= False )
+        btn1 = types.KeyboardButton("Сколько человек работает в данный момент")
+        btn2 = types.KeyboardButton("Сколько человек на смене")
+        btn3 = types.KeyboardButton("Средняя продуктивность")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, btn3, back)
+        bot.send_message(message.chat.id, text="Выберите раздел", reply_markup=markup)
+
+
+bot.polling(none_stop=True)
