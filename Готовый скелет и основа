@@ -1,0 +1,240 @@
+import telebot
+from telebot import types
+import math
+from functools import wraps
+
+
+token = '6220878951:AAGOwuvhBTDNNrFEdB14NyPULDqbd2X3jEI'
+bot = telebot.TeleBot(token)
+dostup = [1050808216]
+
+
+def restricted(func):
+    @wraps(func)
+    def wrapped(message):
+        user_id = message.chat.id
+        if user_id not in dostup:
+            bot.send_message(message.chat.id, text="Привет, {0.first_name},у тебя нет доступа.".format(message.from_user))
+            return
+        return func(message)
+    return wrapped
+
+
+@bot.message_handler(commands=['start'])
+@restricted
+def start(message):
+    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    btn1 = types.KeyboardButton("Общие метрики")
+    btn2 = types.KeyboardButton("Организационная структура")
+    btn3 = types.KeyboardButton("Отчёты")
+    btn4 = types.KeyboardButton("Особые события")
+    markup.add(btn1, btn2, btn3, btn4)
+    bot.send_message(message.chat.id,text="Привет, {0.first_name}! Я бот.".format(message.from_user), reply_markup=markup)
+
+
+@bot.message_handler(content_types=['text'])
+@restricted
+def func(message):
+    if message.text == "Общие метрики":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Сколько человек работает в данный момент")
+        btn2 = types.KeyboardButton("Сколько человек на смене")
+        btn3 = types.KeyboardButton("Средняя продуктивность")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, btn3, back)
+        bot.send_message(message.chat.id, text="Выберите интересующую вас информацию", reply_markup=markup)
+    elif message.text == "Организационная структура":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Отдел 1")
+        btn2 = types.KeyboardButton("Отдел 2")
+        btn3 = types.KeyboardButton("Отдел управляющих")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, btn3, back)
+        bot.send_message(message.chat.id, text="Выберите отдел", reply_markup=markup)
+    elif message.text == "Отчёты":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("По отделам")
+        btn2 = types.KeyboardButton("По дням")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, back)
+        bot.send_message(message.chat.id, text="Выберите раздел", reply_markup=markup)
+    elif message.text == "Особые события":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(back)
+        bot.send_message(message.chat.id, text="Тут пока ничего нет", reply_markup=markup)
+
+    elif message.text == "Отдел 1":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Профиль А")
+        btn2 = types.KeyboardButton("Профиль Б")
+        btn3 = types.KeyboardButton("Продуктивность отдела 1")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, btn3, back)
+        bot.send_message(message.chat.id, text="Выберите раздел", reply_markup=markup)
+    elif message.text == "Отдел 2":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Профиль В")
+        btn2 = types.KeyboardButton("Профиль Г")
+        btn3 = types.KeyboardButton("Продуктивность отдела 2")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, btn3, back)
+        bot.send_message(message.chat.id, text="Выберите раздел", reply_markup=markup)
+    elif message.text == "Отдел управляющих":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Профиль Д")
+        btn2 = types.KeyboardButton("Профиль Е")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, back)
+        bot.send_message(message.chat.id, text="Выберите раздел", reply_markup=markup)
+
+    elif message.text == "Профиль А":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Общая информация")
+        btn2 = types.KeyboardButton("Последний рабочий день")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, back)
+        bot.send_message(message.chat.id, text="Выберите раздел", reply_markup=markup)
+    elif message.text == "Профиль Б":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Общая информация")
+        btn2 = types.KeyboardButton("Последний рабочий день")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, back)
+        bot.send_message(message.chat.id, text="Выберите раздел", reply_markup=markup)
+    elif message.text == "Продуктивность отдела 1":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(back)
+        bot.send_message(message.chat.id, text="Тут пока ничего нет", reply_markup=markup)
+
+    elif message.text == "Профиль В":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Общая информация")
+        btn2 = types.KeyboardButton("Последний рабочий день")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, back)
+        bot.send_message(message.chat.id, text="Выберите раздел", reply_markup=markup)
+    elif message.text == "Профиль Г":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Общая информация")
+        btn2 = types.KeyboardButton("Последний рабочий день")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, back)
+        bot.send_message(message.chat.id, text="Выберите раздел", reply_markup=markup)
+    elif message.text == "Продуктивность отдела 2":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(back)
+        bot.send_message(message.chat.id, text="Тут пока ничего нет", reply_markup=markup)
+
+    elif message.text == "Профиль Д":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Общая информация")
+        btn2 = types.KeyboardButton("Последний рабочий день")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, back)
+        bot.send_message(message.chat.id, text="Выберите раздел", reply_markup=markup)
+    elif message.text == "Профиль E":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Общая информация")
+        btn2 = types.KeyboardButton("Последний рабочий день")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, back)
+        bot.send_message(message.chat.id, text="Выберите раздел", reply_markup=markup)
+
+    elif message.text == "Сколько человек работает в данный момент":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add( back)
+        bot.send_message(message.chat.id, text="Тут пока ничего нет",reply_markup=markup)
+    elif message.text == "Сколько человек на смене":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(back)
+        bot.send_message(message.chat.id, text="Тут пока ничего нет", reply_markup=markup)
+    elif message.text == "Средняя продуктивность":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(back)
+        bot.send_message(message.chat.id, text="Тут пока ничего нет", reply_markup=markup)
+
+    elif message.text == "По отделам":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Продуктивность отдела за рабочий день")
+        btn2 = types.KeyboardButton("Общая продуктивность отдела")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, back)
+        bot.send_message(message.chat.id, text="Выберите раздел", reply_markup=markup)
+    elif message.text == "По дням":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Конкретный рабочий день")
+        btn2 = types.KeyboardButton("Последний рабочий день")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2, back)
+        bot.send_message(message.chat.id, text="Выберите раздел", reply_markup=markup)
+
+    elif message.text == "Продуктивность отдела за рабочий день":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Выполненные задачи")
+        btn2 = types.KeyboardButton("Процент времени бездействия")
+        btn3 = types.KeyboardButton("Количество сохранённых проектов")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, btn2,btn3, back)
+        bot.send_message(message.chat.id, text="Выберите раздел", reply_markup=markup)
+    elif message.text == "Общая продуктивность отдела":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(back)
+        bot.send_message(message.chat.id, text="Тут пока ничего нет", reply_markup=markup)
+
+    elif message.text == "Конкретный рабочий день":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Продуктивность человека в этот день")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, back)
+        bot.send_message(message.chat.id, text="Выберите раздел", reply_markup=markup)
+    elif message.text == "Конкретный рабочий день":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Продуктивность человека")
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(btn1, back)
+        bot.send_message(message.chat.id, text="Выберите раздел", reply_markup=markup)
+
+    elif message.text == "Выполненные задачи":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(back)
+        bot.send_message(message.chat.id, text="Тут пока ничего нет", reply_markup=markup)
+    elif message.text == "Процент времени бездействия":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(back)
+        bot.send_message(message.chat.id, text="Тут пока ничего нет", reply_markup=markup)
+    elif message.text == "Количество сохранённых проектов":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(back)
+        bot.send_message(message.chat.id, text="Тут пока ничего нет", reply_markup=markup)
+
+    elif message.text == "Продуктивность человека в этот день":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(back)
+        bot.send_message(message.chat.id, text="Тут пока ничего нет", reply_markup=markup)
+    elif message.text == "Продуктивность человека":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        back = types.KeyboardButton("Вернуться в главное меню")
+        markup.add(back)
+        bot.send_message(message.chat.id, text="Тут пока ничего нет", reply_markup=markup)
+
+    elif message.text == "Вернуться в главное меню":
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
+        btn1 = types.KeyboardButton("Общие метрики")
+        btn2 = types.KeyboardButton("Организационная структура")
+        btn3 = types.KeyboardButton("Отчёты")
+        btn4 = types.KeyboardButton("Особые события")
+        markup.add(btn1, btn2, btn3, btn4)
+        bot.send_message(message.chat.id, text="Вы вернулись в главное меню".format(message.from_user),reply_markup=markup)
+
+bot.polling(none_stop=True)
