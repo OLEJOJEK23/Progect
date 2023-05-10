@@ -1,0 +1,215 @@
+def func_1(x):
+    sant = x / 10
+    dec = sant / 10
+    met = dec / 10
+    kil = met / 1000
+    vivod = f"Миллиметры: {x} \n Сантиметры: {sant} \n Дециметры: {dec} \n Метры {met} \n Километры {kil} "
+    print(vivod)
+func_1(34)
+
+def func_2(name, n):
+    if n == 1:						
+        schet = 'один'						
+    elif n == 2:						
+        schet = 'два'						
+    elif n == 3:						
+        schet = 'три'						
+    elif n == 4:						
+        schet = 'четыре'						
+    elif n == 5:						
+        schet = 'пять'						
+    elif n == 6:						
+        schet = 'шесть'						
+    elif n == 7:						
+        schet = 'семь'						
+    elif n == 8:						
+        schet = 'восемь'						
+    elif n == 9:						
+        schet = 'девять'						
+    elif n == 10:						
+        schet = 'десять'  						
+    elif n == 11:						
+        schet = 'одиннадцать'						
+    elif n == 12:						
+        schet = 'двенадцать'						
+    elif n == 13:						
+        schet = 'тринадцать'						
+    elif n == 14:						
+        schet = 'четырнадцать'						
+    elif n == 15:						
+        schet = 'пятнадцать'						
+    elif n == 16:						
+        schet = 'шестнадцать'						
+    elif n == 17:						
+        schet = 'семнадцать'						
+    elif n == 18:						
+        schet = 'восемнадцать'						
+    elif n == 19:						
+        schet = 'девятнадцать'						
+    elif n == 20:						
+        schet = 'двадцать'						
+    elif n == 21:						
+        schet = 'двадцатьодин'						
+    elif n == 22:						
+        schet = 'двадцатьдва'						
+    elif n == 23:						
+        schet = 'двадцатьтри'						
+    elif n == 24:						
+        schet = 'двадцатьчетыре'						
+    elif n == 25:						
+        schet = 'двадцатьпять'						
+    elif n == 26:						
+        schet = 'двадцатьшесть'						
+    elif n == 27:						
+        schet = 'двадцатьсемь'						
+    elif n == 28:						
+        schet = 'двадцатьвосемь'  						
+    elif n == 29:						
+        schet = 'двадцатьдевять'						
+    elif n == 30:						
+        schet = 'тридцать'						
+    elif n == 31:						
+        schet = 'тридцатьодин'						
+    elif n == 32:						
+        schet = 'тридцатьдва'						
+    elif n == 33:						
+        schet = 'тридцатьтри'						
+    elif n == 34:						
+        schet = 'тридцатьчетыре'						
+    elif n == 35:						
+        schet = 'тридцатьпять'						
+    elif n == 36:						
+        schet = 'тридцатьшесть'						
+    elif n == 37:						
+        schet = 'тридцатьсемь' 						
+    elif n == 38:						
+        schet = 'тридцатьвосемь'						
+    elif n == 39:						
+        schet = 'тридцатьдевять'						
+    elif n == 40:						
+        schet = 'сорок'						
+    elif n == 41:						
+        schet = 'сорокодин'						
+    elif n == 42:						
+        schet = 'сорокдва'						
+    elif n == 43:						
+        schet = 'сороктри'						
+    elif n == 44:						
+        schet = 'сорокчетыре'						
+    elif n == 45:						
+        schet = 'сорокпять'						
+    elif n == 46:						
+        schet = 'сорокшесть'						
+    elif n == 47:						
+        schet = 'сороксемь'						
+    elif n == 48:						
+        schet = 'сороквосемь'						
+    elif n == 49:						
+        schet = 'сорокдевять'						
+    elif n == 50:						
+        schet = 'пятьдесят'						
+    elif n == 51:						
+        schet = 'пятьдесятодин'						
+    elif n == 52:						
+        schet = 'пятьдесятдва'						
+    elif n == 53:						
+        schet = 'пятьдесяттри'						
+    elif n == 54:						
+        schet = 'пятьдесятчетыре'						
+    elif n == 55:						
+        schet = 'пятьдесятпять'						
+    elif n == 56:						
+        schet = 'пятьдесятшесть'						
+    elif n == 57:						
+        schet = 'пятьдесятсемь'						
+    elif n == 58:						
+        schet = 'пятьдесятвосемь'						
+    elif n == 59:						
+        schet = 'пятьдесятдевять'						
+    elif n == 60:						
+        schet = 'шестьдесят'						
+    elif n == 61:						
+        schet = 'шестьдесятодин'						
+    elif n == 62:						
+        schet = 'шестьдесятдва'						
+    elif n == 63:						
+        schet = 'шестьдесяттри'						
+    elif n == 64:						
+        schet = 'шестьдесятчетыре'   						
+    elif n == 65:						
+        schet = 'шестьдесятпять'						
+    elif n == 66:						
+        schet = 'шестьдесятшесть'						
+    elif n == 67:						
+        schet = 'шестьдесятсемь'						
+    elif n == 68:						
+        schet = 'шестьдесятвосемь'						
+    elif n == 69:						
+        schet = 'шестьдесятдевять'						
+    elif n == 70:						
+        schet = 'семьдесят'						
+    elif n == 71:						
+        schet = 'семьдесятодин'						
+    elif n == 72:						
+        schet = 'семьдесятдва'						
+    elif n == 73:						
+        schet = 'семьдесяттри'						
+    elif n == 74:						
+        schet = 'семьдесятчетыре'						
+    elif n == 75:						
+        schet = 'семьдесятпять'						
+    elif n == 76:						
+        schet = 'семьдесятшесть'						
+    elif n == 77:						
+        schet = 'семьдесятсемь'						
+    elif n == 78:						
+        schet = 'семьдесятвосемь' 						
+    elif n == 79:						
+        schet = 'семьдесятдевять'						
+    elif n == 80:						
+        schet = 'восемьдесят' 						
+    elif n == 81:						
+        schet = 'восемьдесятодин'						
+    elif n == 82:						
+        schet = 'восемьдесятдва'						
+    elif n == 83:						
+        schet = 'восемьдесяттри'						
+    elif n == 84:						
+        schet = 'восемьдесятчетыре'						
+    elif n == 85:						
+        schet = 'восемьдесятпять'						
+    elif n == 86:						
+        schet = 'восемьдесятшесть'						
+    elif n == 87:						
+        schet = 'восемьдесятсемь'						
+    elif n == 88:						
+        schet = 'восемьдесятвосемь'						
+    elif n == 89:						
+        schet = 'восемьдесятдевять'						
+    elif n == 90:						
+        schet = 'девяносто'						
+    elif n == 91:						
+        schet = 'девяностоодин'  						
+    elif n == 92:						
+        schet = 'девяностодва'						
+    elif n == 93:						
+        schet = 'девяностотри'						
+    elif n == 94:						
+        schet = 'девяносточетыре'						
+    elif n == 95:						
+        schet = 'девяностопять'						
+    elif n == 96:						
+        schet = 'девяностошесть'						
+    elif n == 97:						
+        schet = 'девяностосемь'						
+    elif n == 98:						
+        schet = 'девяностовосемь'						
+    elif n == 99:						
+        schet = 'девяностодевять'						
+    else:
+        print("Net")
+    summa = 0
+    summa = summa + len(schet)
+    summa = summa + len(name)
+    print(f"{name} {schet} - {summa} символов")    
+func_2("Agas", 21)
