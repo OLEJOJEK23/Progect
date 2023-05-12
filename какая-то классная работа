@@ -1,332 +1,372 @@
 task = int(input())
 if task == 1:
-        def rast(x):
-            x = x/10
-            print( str(x)+ " сантиметры ")
-            x = x / 10 
-            print( str(x)+ " дцметры ")
-            x = x /  10 
-            print( str(x)+ " метры ")
-            x = x / 1000
-            print( str(x)+ " километры ")
-            return 
-        
-        
-        x = int(input("Введите расстояние в миллиметрах "))
-        rast(x)
-        
+    def rast(x):
+        x = x / 10
+        print(str(x) + " сантиметры ")
+        x = x / 10
+        print(str(x) + " дцметры ")
+        x = x / 10
+        print(str(x) + " метры ")
+        x = x / 1000
+        print(str(x) + " километры ")
+        return
+
+
+    x = int(input("Введите расстояние в миллиметрах "))
+    rast(x)
+
 if task == 2:
     name = input("Введите имя ")
     vozrastpis = ""
     vozrast = int(input("Введите возраст "))
-    kol = 0 
-    if vozrast == 1:				
-         vozrastpis ='один'				
-        				
-    elif vozrast == 2:				
-         vozrastpis ='два'				
-        				
-    elif vozrast == 3:				
-         vozrastpis ='три'				
-        				
-    elif vozrast == 4:				
-         vozrastpis ='четыре'				
-        				
-    elif vozrast == 5:				
-         vozrastpis ='пять'				
-        				
-    elif vozrast == 6:				
-         vozrastpis ='шесть'				
-        				
-    elif vozrast == 7:				
-         vozrastpis ='семь'				
-        				
-    elif vozrast == 8:				
-         vozrastpis ='восемь'				
-        				
-    elif vozrast == 9:				
-         vozrastpis ='девять'				
-        				
-    elif vozrast == 10:				
-         vozrastpis ='десять'  				
-        				
-    elif vozrast == 11:				
-         vozrastpis ='одиннадцать'				
-        				
-    elif vozrast == 12:				
-         vozrastpis ='двенадцать'				
-        				
-    elif vozrast == 13:				
-         vozrastpis ='тринадцать'				
-        				
-    elif vozrast == 14:				
-         vozrastpis ='четырнадцать'				
-        				
-    elif vozrast == 15:				
-         vozrastpis ='пятнадцать'				
-        				
-    elif vozrast == 16:				
-         vozrastpis ='шестнадцать'				
-        				
-    elif vozrast == 17:				
-         vozrastpis ='семнадцать'				
-        				
-    elif vozrast == 18:				
-         vozrastpis ='восемнадцать'				
-        				
-    elif vozrast == 19:				
-         vozrastpis ='девятнадцать'				
-        				
-    elif vozrast == 20:				
-         vozrastpis ='двадцать'				
-        				
-    elif vozrast == 21:				
-         vozrastpis ='двадцатьодин'				
-        				
-    elif vozrast == 22:				
-         vozrastpis ='двадцатьдва'				
-        				
-    elif vozrast == 23:				
-         vozrastpis ='двадцатьтри'				
-        				
-    elif vozrast == 24:				
-         vozrastpis ='двадцатьчетыре'				
-        				
-    elif vozrast == 25:				
-         vozrastpis ='двадцатьпять'				
-        				
-    elif vozrast == 26:				
-         vozrastpis ='двадцатьшесть'				
-        				
-    elif vozrast == 27:				
-         vozrastpis ='двадцатьсемь'				
-        				
-    elif vozrast == 28:				
-         vozrastpis ='двадцатьвосемь'  				
-        				
-    elif vozrast == 29:				
-         vozrastpis ='двадцатьдевять'				
-        				
-    elif vozrast == 30:				
-         vozrastpis ='тридцать'				
-        				
-    elif vozrast == 31:				
-         vozrastpis ='тридцатьодин'				
-        				
-    elif vozrast == 32:				
-         vozrastpis ='тридцатьдва'				
-        				
-    elif vozrast == 33:				
-         vozrastpis ='тридцатьтри'				
-        				
-    elif vozrast == 34:				
-         vozrastpis ='тридцатьчетыре'				
-        				
-    elif vozrast == 35:				
-         vozrastpis ='тридцатьпять'				
-        				
-    elif vozrast == 36:				
-         vozrastpis ='тридцатьшесть'				
-        				
-    elif vozrast == 37:				
-         vozrastpis ='тридцатьсемь' 				
-        				
-    elif vozrast == 38:				
-         vozrastpis ='тридцатьвосемь'				
-        				
-    elif vozrast == 39:				
-         vozrastpis ='тридцатьдевять'				
-        				
-    elif vozrast == 40:				
-         vozrastpis ='сорок'				
-        				
-    elif vozrast == 41:				
-         vozrastpis ='сорокодин'				
-        				
-    elif vozrast == 42:				
-         vozrastpis ='сорокдва'				
-        				
-    elif vozrast == 43:				
-         vozrastpis ='сороктри'				
-        				
-    elif vozrast == 44:				
-         vozrastpis ='сорокчетыре'				
-        				
-    elif vozrast == 45:				
-         vozrastpis ='сорокпять'				
-        				
-    elif vozrast == 46:				
-         vozrastpis ='сорокшесть'				
-        				
-    elif vozrast == 47:				
-         vozrastpis ='сороксемь'				
-        				
-    elif vozrast == 48:				
-         vozrastpis ='сороквосемь'				
-        				
-    elif vozrast == 49:				
-         vozrastpis ='сорокдевять'				
-        				
-    elif vozrast == 50:				
-         vozrastpis ='пятьдесят'				
-        				
-    elif vozrast == 51:				
-         vozrastpis ='пятьдесятодин'				
-        				
-    elif vozrast == 52:				
-         vozrastpis ='пятьдесятдва'				
-        				
-    elif vozrast == 53:				
-         vozrastpis ='пятьдесяттри'				
-        				
-    elif vozrast == 54:				
-         vozrastpis ='пятьдесятчетыре'				
-        				
-    elif vozrast == 55:				
-         vozrastpis ='пятьдесятпять'				
-        				
-    elif vozrast == 56:				
-         vozrastpis ='пятьдесятшесть'				
-        				
-    elif vozrast == 57:				
-         vozrastpis ='пятьдесятсемь'				
-        				
-    elif vozrast == 58:				
-         vozrastpis ='пятьдесятвосемь'				
-        				
-    elif vozrast == 59:				
-         vozrastpis ='пятьдесятдевять'				
-        				
-    elif vozrast == 60:				
-         vozrastpis ='шестьдесят'				
-        				
-    elif vozrast == 61:				
-         vozrastpis ='шестьдесятодин'				
-        				
-    elif vozrast == 62:				
-         vozrastpis ='шестьдесятдва'				
-        				
-    elif vozrast == 63:				
-         vozrastpis ='шестьдесяттри'				
-        				
-    elif vozrast == 64:				
-         vozrastpis ='шестьдесятчетыре'   				
-        				
-    elif vozrast == 65:				
-         vozrastpis ='шестьдесятпять'				
-        				
-    elif vozrast == 66:				
-         vozrastpis ='шестьдесятшесть'				
-        				
-    elif vozrast == 67:				
-         vozrastpis ='шестьдесятсемь'				
-        				
-    elif vozrast == 68:				
-         vozrastpis ='шестьдесятвосемь'				
-        				
-    elif vozrast == 69:				
-         vozrastpis ='шестьдесятдевять'				
-        				
-    elif vozrast == 70:				
-         vozrastpis ='семьдесят'				
-        				
-    elif vozrast == 71:				
-         vozrastpis ='семьдесятодин'				
-        				
-    elif vozrast == 72:				
-         vozrastpis ='семьдесятдва'				
-        				
-    elif vozrast == 73:				
-         vozrastpis ='семьдесяттри'				
-        				
-    elif vozrast == 74:				
-         vozrastpis ='семьдесятчетыре'				
-        				
-    elif vozrast == 75:				
-         vozrastpis ='семьдесятпять'				
-        				
-    elif vozrast == 76:				
-         vozrastpis ='семьдесятшесть'				
-        				
-    elif vozrast == 77:				
-         vozrastpis ='семьдесятсемь'				
-        				
-    elif vozrast == 78:				
-         vozrastpis ='семьдесятвосемь' 				
-        				
-    elif vozrast == 79:				
-         vozrastpis ='семьдесятдевять'				
-        				
-    elif vozrast == 80:				
-         vozrastpis ='восемьдесят' 				
-        				
-    elif vozrast == 81:				
-         vozrastpis ='восемьдесятодин'				
-        				
-    elif vozrast == 82:				
-         vozrastpis ='восемьдесятдва'				
-        				
-    elif vozrast == 83:				
-         vozrastpis ='восемьдесяттри'				
-        				
-    elif vozrast == 84:				
-         vozrastpis ='восемьдесятчетыре'				
-        				
-    elif vozrast == 85:				
-         vozrastpis ='восемьдесятпять'				
-        				
-    elif vozrast == 86:				
-         vozrastpis ='восемьдесятшесть'				
-        				
-    elif vozrast == 87:				
-         vozrastpis ='восемьдесятсемь'				
-        				
-    elif vozrast == 88:				
-         vozrastpis ='восемьдесятвосемь'				
-        				
-    elif vozrast == 89:				
-         vozrastpis ='восемьдесятдевять'				
-        				
-    elif vozrast == 90:				
-         vozrastpis ='девяносто'				
-        				
-    elif vozrast == 91:				
-         vozrastpis ='девяностоодин'  				
-        				
-    elif vozrast == 92:				
-         vozrastpis ='девяностодва'				
-        				
-    elif vozrast == 93:				
-         vozrastpis ='девяностотри'				
-        				
-    elif vozrast == 94:				
-         vozrastpis ='девяносточетыре'				
-        				
-    elif vozrast == 95:				
-         vozrastpis ='девяностопять'				
-        				
-    elif vozrast == 96:				
-         vozrastpis ='девяностошесть'				
-        				
-    elif vozrast == 97:				
-         vozrastpis ='девяностосемь'				
-        				
-    elif vozrast == 98:				
-         vozrastpis ='девяностовосемь'			
+    kol = 0
+    if vozrast == 1:
+        vozrastpis = 'один'
 
-    else: print("Ваши желания не поддерживаются нашим интерпритатором!!")
+    elif vozrast == 2:
+        vozrastpis = 'два'
+
+    elif vozrast == 3:
+        vozrastpis = 'три'
+
+    elif vozrast == 4:
+        vozrastpis = 'четыре'
+
+    elif vozrast == 5:
+        vozrastpis = 'пять'
+
+    elif vozrast == 6:
+        vozrastpis = 'шесть'
+
+    elif vozrast == 7:
+        vozrastpis = 'семь'
+
+    elif vozrast == 8:
+        vozrastpis = 'восемь'
+
+    elif vozrast == 9:
+        vozrastpis = 'девять'
+
+    elif vozrast == 10:
+        vozrastpis = 'десять'
+
+    elif vozrast == 11:
+        vozrastpis = 'одиннадцать'
+
+    elif vozrast == 12:
+        vozrastpis = 'двенадцать'
+
+    elif vozrast == 13:
+        vozrastpis = 'тринадцать'
+
+    elif vozrast == 14:
+        vozrastpis = 'четырнадцать'
+
+    elif vozrast == 15:
+        vozrastpis = 'пятнадцать'
+
+    elif vozrast == 16:
+        vozrastpis = 'шестнадцать'
+
+    elif vozrast == 17:
+        vozrastpis = 'семнадцать'
+
+    elif vozrast == 18:
+        vozrastpis = 'восемнадцать'
+
+    elif vozrast == 19:
+        vozrastpis = 'девятнадцать'
+
+    elif vozrast == 20:
+        vozrastpis = 'двадцать'
+
+    elif vozrast == 21:
+        vozrastpis = 'двадцатьодин'
+
+    elif vozrast == 22:
+        vozrastpis = 'двадцатьдва'
+
+    elif vozrast == 23:
+        vozrastpis = 'двадцатьтри'
+
+    elif vozrast == 24:
+        vozrastpis = 'двадцатьчетыре'
+
+    elif vozrast == 25:
+        vozrastpis = 'двадцатьпять'
+
+    elif vozrast == 26:
+        vozrastpis = 'двадцатьшесть'
+
+    elif vozrast == 27:
+        vozrastpis = 'двадцатьсемь'
+
+    elif vozrast == 28:
+        vozrastpis = 'двадцатьвосемь'
+
+    elif vozrast == 29:
+        vozrastpis = 'двадцатьдевять'
+
+    elif vozrast == 30:
+        vozrastpis = 'тридцать'
+
+    elif vozrast == 31:
+        vozrastpis = 'тридцатьодин'
+
+    elif vozrast == 32:
+        vozrastpis = 'тридцатьдва'
+
+    elif vozrast == 33:
+        vozrastpis = 'тридцатьтри'
+
+    elif vozrast == 34:
+        vozrastpis = 'тридцатьчетыре'
+
+    elif vozrast == 35:
+        vozrastpis = 'тридцатьпять'
+
+    elif vozrast == 36:
+        vozrastpis = 'тридцатьшесть'
+
+    elif vozrast == 37:
+        vozrastpis = 'тридцатьсемь'
+
+    elif vozrast == 38:
+        vozrastpis = 'тридцатьвосемь'
+
+    elif vozrast == 39:
+        vozrastpis = 'тридцатьдевять'
+
+    elif vozrast == 40:
+        vozrastpis = 'сорок'
+
+    elif vozrast == 41:
+        vozrastpis = 'сорокодин'
+
+    elif vozrast == 42:
+        vozrastpis = 'сорокдва'
+
+    elif vozrast == 43:
+        vozrastpis = 'сороктри'
+
+    elif vozrast == 44:
+        vozrastpis = 'сорокчетыре'
+
+    elif vozrast == 45:
+        vozrastpis = 'сорокпять'
+
+    elif vozrast == 46:
+        vozrastpis = 'сорокшесть'
+
+    elif vozrast == 47:
+        vozrastpis = 'сороксемь'
+
+    elif vozrast == 48:
+        vozrastpis = 'сороквосемь'
+
+    elif vozrast == 49:
+        vozrastpis = 'сорокдевять'
+
+    elif vozrast == 50:
+        vozrastpis = 'пятьдесят'
+
+    elif vozrast == 51:
+        vozrastpis = 'пятьдесятодин'
+
+    elif vozrast == 52:
+        vozrastpis = 'пятьдесятдва'
+
+    elif vozrast == 53:
+        vozrastpis = 'пятьдесяттри'
+
+    elif vozrast == 54:
+        vozrastpis = 'пятьдесятчетыре'
+
+    elif vozrast == 55:
+        vozrastpis = 'пятьдесятпять'
+
+    elif vozrast == 56:
+        vozrastpis = 'пятьдесятшесть'
+
+    elif vozrast == 57:
+        vozrastpis = 'пятьдесятсемь'
+
+    elif vozrast == 58:
+        vozrastpis = 'пятьдесятвосемь'
+
+    elif vozrast == 59:
+        vozrastpis = 'пятьдесятдевять'
+
+    elif vozrast == 60:
+        vozrastpis = 'шестьдесят'
+
+    elif vozrast == 61:
+        vozrastpis = 'шестьдесятодин'
+
+    elif vozrast == 62:
+        vozrastpis = 'шестьдесятдва'
+
+    elif vozrast == 63:
+        vozrastpis = 'шестьдесяттри'
+
+    elif vozrast == 64:
+        vozrastpis = 'шестьдесятчетыре'
+
+    elif vozrast == 65:
+        vozrastpis = 'шестьдесятпять'
+
+    elif vozrast == 66:
+        vozrastpis = 'шестьдесятшесть'
+
+    elif vozrast == 67:
+        vozrastpis = 'шестьдесятсемь'
+
+    elif vozrast == 68:
+        vozrastpis = 'шестьдесятвосемь'
+
+    elif vozrast == 69:
+        vozrastpis = 'шестьдесятдевять'
+
+    elif vozrast == 70:
+        vozrastpis = 'семьдесят'
+
+    elif vozrast == 71:
+        vozrastpis = 'семьдесятодин'
+
+    elif vozrast == 72:
+        vozrastpis = 'семьдесятдва'
+
+    elif vozrast == 73:
+        vozrastpis = 'семьдесяттри'
+
+    elif vozrast == 74:
+        vozrastpis = 'семьдесятчетыре'
+
+    elif vozrast == 75:
+        vozrastpis = 'семьдесятпять'
+
+    elif vozrast == 76:
+        vozrastpis = 'семьдесятшесть'
+
+    elif vozrast == 77:
+        vozrastpis = 'семьдесятсемь'
+
+    elif vozrast == 78:
+        vozrastpis = 'семьдесятвосемь'
+
+    elif vozrast == 79:
+        vozrastpis = 'семьдесятдевять'
+
+    elif vozrast == 80:
+        vozrastpis = 'восемьдесят'
+
+    elif vozrast == 81:
+        vozrastpis = 'восемьдесятодин'
+
+    elif vozrast == 82:
+        vozrastpis = 'восемьдесятдва'
+
+    elif vozrast == 83:
+        vozrastpis = 'восемьдесяттри'
+
+    elif vozrast == 84:
+        vozrastpis = 'восемьдесятчетыре'
+
+    elif vozrast == 85:
+        vozrastpis = 'восемьдесятпять'
+
+    elif vozrast == 86:
+        vozrastpis = 'восемьдесятшесть'
+
+    elif vozrast == 87:
+        vozrastpis = 'восемьдесятсемь'
+
+    elif vozrast == 88:
+        vozrastpis = 'восемьдесятвосемь'
+
+    elif vozrast == 89:
+        vozrastpis = 'восемьдесятдевять'
+
+    elif vozrast == 90:
+        vozrastpis = 'девяносто'
+
+    elif vozrast == 91:
+        vozrastpis = 'девяностоодин'
+
+    elif vozrast == 92:
+        vozrastpis = 'девяностодва'
+
+    elif vozrast == 93:
+        vozrastpis = 'девяностотри'
+
+    elif vozrast == 94:
+        vozrastpis = 'девяносточетыре'
+
+    elif vozrast == 95:
+        vozrastpis = 'девяностопять'
+
+    elif vozrast == 96:
+        vozrastpis = 'девяностошесть'
+
+    elif vozrast == 97:
+        vozrastpis = 'девяностосемь'
+
+    elif vozrast == 98:
+        vozrastpis = 'девяностовосемь'
+
+    else:
+        print("Ваши желания не поддерживаются нашим интерпритатором!!")
     kol = kol + len(name)
     kol = kol + len(vozrastpis)
-    vovod = str(name) + " " +  str(vozrastpis) + " - " + str(kol) + " Символов"
+    vovod = str(name) + " " + str(vozrastpis) + " - " + str(kol) + " Символов"
     print(vovod)
 if task == 5:
-    def calculation(x,y):
+    def calculation(x, y):
         print(x + y)
         print(x - y)
         return
 
+
     x = int(input())
     y = int(input())
-    calculation(x,y)
+    calculation(x, y)
 
-if task == 4: 
+if task == 4:
+    list1 = [1,2,3,44,6,8,9,6,3,3,1,5,776,67,34,23]
+    list2 = [6,5,3,2,6,8,9,34,54,3,23,45,6576,768,879,45]
+    i = len(list1)
+    j = 0
+    final = []
+    while i > 0:
+        iteml = str(list1.pop(0)) + ',' + str(list2.pop(0))
+        final.append(iteml)
+        i = i -1
+    for item in final:
+        print(str(j) + ". " + final[j])
+        j = j + 1
+
+if task == 3:
+    Ky = int(input())
+    Kx = int(input())
+    Klety = int(input())
+    Kletx = int(input())
+
+    if Klety - 1 == Ky and Kx == Kletx:
+        print("Yes")
+    elif Klety - 1 == Ky and Kletx - 1 == Kx:
+        print("Yes")
+    elif Klety == Ky and Kletx - 1 == Kx:
+        print("Yes")
+    elif Klety + 1 == Ky and Kletx - 1 == Kx:
+        print("Yes")
+    elif Klety + 1 == Ky and Kletx == Kx:
+        print("Yes")
+    elif Klety + 1 == Ky and Kletx - 1 == Kx:
+        print("Yes")
+    elif Klety  == Ky and Kletx + 1 == Kx:
+        print("Yes")
+    elif Klety - 1 == Ky and Kletx + 1 == Kx:
+        print("Yes")
+    elif Klety == Ky and Kletx == Kx:
+        print("Yes.Nice try")
+    else: print("No")
