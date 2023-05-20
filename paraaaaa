@@ -1,0 +1,90 @@
+'''
+word = input("Введите слово: ")
+word = word.lower()
+k = 0
+for i in range(len(word)//2):
+    char_1 = word[i]
+    char_2 = word[len(word) - 1 - i]
+    if char_2 == char_1:
+        k += 1
+if k == len(word)//2:
+    print("Это палиндром")
+else:
+    print("Это не палиндром")
+
+
+
+word = input("Введите слово: ").lower()
+word_2 = reversed(word)
+word_3 = ""
+for i in word_2:
+    word_3 = word_3 + i
+if word == word_3:
+    print("Это палиндром")
+else:
+    print("Это не палиндром")
+'''
+
+list_1 = [[1,2,3],[4,5,6],[7,8,9]]
+list_rotate = [[0,0,0],[0,0,0],[0,0,0]]
+for row in list_1:
+    print(' '.join([str(elem) for elem in row]))
+for row in range(len(list_1)):
+    for elem in range(len(list_1[row])):
+        list_rotate[len(list_1[elem])-1-elem][row] = list_1[row][elem]
+
+for row in list_rotate:
+    print(' '.join([str(elem) for elem in row]))
+    
+
+
+
+
+
+
+
+
+using System;
+
+namespace rotate
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] list_1 = new int[3,3];
+            int[,] list_rotate = new int[3, 3];
+            int i, j;
+            int x = 1;
+            for(i = 0; i < list_1.GetLength(0); i++)
+            {
+                for(j = 0; j < list_1.GetLength(1); j++)
+                {
+                    list_1[i, j] = x;
+                    x += 1;
+                }
+            }
+            for (i = 0; i < list_1.GetLength(0); i++)
+            {
+                for (j = 0; j < list_1.GetLength(1); j++)
+                    Console.Write(String.Format("{0,3}",list_1[i, j]));
+                Console.WriteLine();
+            }
+            Console.WriteLine(" ");
+            for (i = 0; i < list_1.GetLength(0); i++)
+            {
+                for (j = 0; j < list_1.GetLength(1); j++)
+                {
+                    list_rotate[list_rotate.GetLength(1) - 1 - j, i] = list_1[i, j];
+                }
+            }
+            for (i = 0; i < list_1.GetLength(0); i++)
+            {
+                for (j = 0; j < list_1.GetLength(1); j++)
+                    Console.Write(String.Format("{0,3}", list_rotate[i, j]));
+                Console.WriteLine();
+            }
+            Console.ReadLine();
+        }
+    }
+}
