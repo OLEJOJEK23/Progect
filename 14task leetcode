@@ -34,3 +34,28 @@ class Solution:
                 answer = answer + 1000
 
         return answer
+        
+        
+        
+        
+        
+        
+        
+        
+        
+#777777777
+class Solution:
+    def reverse(self, x: int) -> int:
+        List = list(str(x))
+        lol = []
+
+        for i in range(len(List)):
+            if List[i] != "-":
+                lol.insert(0,List[i])
+        if  List[0] == '-':
+            lol.insert(0,'-')
+
+        answer = int(''.join(map(str, lol)))
+        if answer > 2147483647 and answer < -2147483647:
+            answer = 0
+        return answer
