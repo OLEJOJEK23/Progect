@@ -1,0 +1,36 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        I = 1
+        V = 5
+        X = 10
+        L = 50
+        C = 100
+        D = 500
+        M = 1000
+
+        answer = 0 
+        List = list(s)
+        if "IV" in s or "IX" in s:
+            answer-=2
+        if "XL" in s or "XC" in s:
+            answer-=20
+        if "CD" in s or "CM" in s:
+            answer-=200
+        for i in List:
+
+            if i == "I":
+                answer = answer + 1
+            if i == "V":
+                answer = answer + 5
+            if i == "X":
+                answer = answer + 10
+            if i == "L":
+                answer = answer + 50
+            if i == "C":
+                answer = answer + 100
+            if i == "D":
+                answer = answer + 500
+            if i == "M":
+                answer = answer + 1000
+
+        return answer
