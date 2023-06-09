@@ -1,13 +1,16 @@
 class Solution:
-    def isPalindrome(self, x: int) -> bool:
-        k = 0
-        x2 = str(x)
-        for i in range(len(x2)//2):
-            char_1 = x2[i]
-            char_2 = x2[len(x2)- 1 - i]
-            if char_2 == char_1:
-                k += 1
-        if k == len(x2)//2:
-            return True
+    def reverse(self, x: int) -> int:
+        List = list(str(x))
+        lol = []
+
+        for i in range(len(List)):
+            if List[i] != "-":
+                lol.insert(0,List[i])
+        if  List[0] == '-':
+            lol.insert(0,'-')
+
+        answer = int(''.join(map(str, lol)))
+        if answer < 2147483647 and answer > -2147483647:
+            return answer
         else:
-            return False
+            return 0
