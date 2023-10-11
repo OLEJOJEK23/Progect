@@ -1,0 +1,10 @@
+C:\Users\stud\Desktop\triygolnik\triygolnik\bin\Debug\triygolnik.exe.config
+C:\Users\stud\Desktop\triygolnik\triygolnik\bin\Debug\triygolnik.exe
+C:\Users\stud\Desktop\triygolnik\triygolnik\bin\Debug\triygolnik.pdb
+C:\Users\stud\Desktop\triygolnik\triygolnik\obj\Debug\triygolnik.csprojAssemblyReference.cache
+C:\Users\stud\Desktop\triygolnik\triygolnik\obj\Debug\triygolnik.DA.resources
+C:\Users\stud\Desktop\triygolnik\triygolnik\obj\Debug\triygolnik.Properties.Resources.resources
+C:\Users\stud\Desktop\triygolnik\triygolnik\obj\Debug\triygolnik.csproj.GenerateResource.cache
+C:\Users\stud\Desktop\triygolnik\triygolnik\obj\Debug\triygolnik.csproj.CoreCompileInputs.cache
+C:\Users\stud\Desktop\triygolnik\triygolnik\obj\Debug\triygolnik.exe
+C:\Users\stud\Desktop\triygolnik\triygolnik\obj\Debug\triygolnik.pdb
