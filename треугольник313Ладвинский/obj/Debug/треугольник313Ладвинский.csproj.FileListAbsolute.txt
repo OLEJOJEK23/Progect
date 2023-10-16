@@ -1,0 +1,10 @@
+C:\Users\stud\source\repos\треугольник313Ладвинский\bin\Debug\треугольник313Ладвинский.exe.config
+C:\Users\stud\source\repos\треугольник313Ладвинский\bin\Debug\треугольник313Ладвинский.exe
+C:\Users\stud\source\repos\треугольник313Ладвинский\bin\Debug\треугольник313Ладвинский.pdb
+C:\Users\stud\source\repos\треугольник313Ладвинский\obj\Debug\треугольник313Ладвинский.csprojAssemblyReference.cache
+C:\Users\stud\source\repos\треугольник313Ладвинский\obj\Debug\треугольник313Ладвинский.Form1.resources
+C:\Users\stud\source\repos\треугольник313Ладвинский\obj\Debug\треугольник313Ладвинский.Properties.Resources.resources
+C:\Users\stud\source\repos\треугольник313Ладвинский\obj\Debug\треугольник313Ладвинский.csproj.GenerateResource.cache
+C:\Users\stud\source\repos\треугольник313Ладвинский\obj\Debug\треугольник313Ладвинский.csproj.CoreCompileInputs.cache
+C:\Users\stud\source\repos\треугольник313Ладвинский\obj\Debug\треугольник313Ладвинский.exe
+C:\Users\stud\source\repos\треугольник313Ладвинский\obj\Debug\треугольник313Ладвинский.pdb
