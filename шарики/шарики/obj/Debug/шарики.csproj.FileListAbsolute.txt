@@ -1,0 +1,11 @@
+C:\Users\myka1\source\repos\шарики\шарики\bin\Debug\шарики.exe.config
+C:\Users\myka1\source\repos\шарики\шарики\bin\Debug\шарики.exe
+C:\Users\myka1\source\repos\шарики\шарики\bin\Debug\шарики.pdb
+C:\Users\myka1\source\repos\шарики\шарики\obj\Debug\шарики.csproj.AssemblyReference.cache
+C:\Users\myka1\source\repos\шарики\шарики\obj\Debug\шарики.csproj.SuggestedBindingRedirects.cache
+C:\Users\myka1\source\repos\шарики\шарики\obj\Debug\шарики.Шарики.resources
+C:\Users\myka1\source\repos\шарики\шарики\obj\Debug\шарики.Properties.Resources.resources
+C:\Users\myka1\source\repos\шарики\шарики\obj\Debug\шарики.csproj.GenerateResource.cache
+C:\Users\myka1\source\repos\шарики\шарики\obj\Debug\шарики.csproj.CoreCompileInputs.cache
+C:\Users\myka1\source\repos\шарики\шарики\obj\Debug\шарики.exe
+C:\Users\myka1\source\repos\шарики\шарики\obj\Debug\шарики.pdb
