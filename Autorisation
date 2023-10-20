@@ -1,50 +1,43 @@
-import os
-import hashlib
-salt = os.urandom(32)
+from hashlib import sha256
 print("Здравствуйте, для входа введите 1, чтобы создать аккаунт введите 2")
 do = input()
 
+
 def registration():
-    print("Введите имя пользователя")
-    Username = input()
     print("Введите желаемый логин")
-    login = input()
+    user_login = input()
     print("Введите пароль")
     password = input()
     try:
-        hash = hashlib.pbkdf2_hmac('sha256',password.encode('utf-8'),salt,10000)
-        myfile = open(f"{Username}.txt", "w+")
-        myfile.write(f"{login}\n{hash}\n{salt}")
+        password_hash = sha256(password.encode('utf-8')).hexdigest()
+        my_file = open(f"{user_login}.txt", "w+")
+        my_file.write(f"{password_hash}")
         print("Аккаунт успешно создан")
     except Exception as ex:
         print(f"При попытки создания аккаунта произошла ошибка: {ex}")
 
+
 def login():
-    print("Введите имя пользователя")
-    Username = input()
     print("Введите логин")
-    login = input()
+    user_login = input()
     print("Введите пароль")
     password = input()
     try:
-        myfile = open(f"{Username}.txt", "r")
-        lines = myfile.readlines()
-        rightlogin = lines[0].strip()
-        righthash = lines[1].strip()
-        saltfromfile = lines[2].strip()
-        hash = hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'), saltfromfile, 10000)
-        if login == rightlogin:
-            if hash == righthash:
-                print(f"Успешный вход, добрый день {Username}")
-            else:
-                print("Неверный пароль")
+        my_file = open(f"{user_login}.txt", "r")
+        lines = my_file.readlines()
+        right_hash = lines[0].strip()
+        password_hash = sha256(password.encode('utf-8')).hexdigest()
+        if password_hash == right_hash:
+            print(f"Успешный вход, добрый день")
         else:
-            print("Неверный логин")
+            print("Неверный пароль")
     except Exception as ex:
         print(f"При попытки создания аккаунта произошла ошибка: {ex}")
+
 
 if do == '1':
     login()
 elif do == '2':
     registration()
-else:print("Неизвестное действие")
+else:
+    print("Неизвестное действие")
