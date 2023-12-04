@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">lab05</string>
+    <string name="infText"></string>
+    <string name="OPENbutt">OPEN DIALOG</string>
+    <string name="EXITbutt">EXIT APP</string>
+    <string name="TXTinput" />
+    <string name="TXTinputSecond" />
+    <string name="btnOK">OK</string>
+    <string name="btnCANCEL">CANCEL</string>
+</resources>
