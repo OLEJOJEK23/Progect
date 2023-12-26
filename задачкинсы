@@ -1,0 +1,263 @@
+#Билет N2
+'''
+from random import randint
+from colorama import Fore
+list = [randint(7, 70) for i in range(31)]
+k = 0
+print(list)
+print("Максимальная цена юаня: ", max(list))
+print("Минимальная цена юаня: ", min(list))
+rubles = int(input("Введите рубли: "))
+print(f"{round(rubles / min(list), 2)} юаней по самому выгодному курсу")
+average = sum(list) / 31
+for i in range(31):
+    if list[i] > average:
+        print(Fore.RED + f"Курс в {i + 1} день больше среднего на {round(list[i] - average, 2)}")
+        k += 1
+    if list[i] < average:
+        print(Fore.GREEN + f"Курс в {i + 1} день меньше среднего на {round(average - list[i], 2)}")
+print(Fore.LIGHTWHITE_EX + f"Дней, когда курс был больше среднего: {k}")
+'''
+
+
+#Билет N5
+'''
+sum = float(input("Введите сумму вклада: "))
+disc = float(input("Введите процент вклада: "))
+mes = int(input("Введите срок вклада в месяцах: "))
+disc = disc / 100 + 1
+for i in range(mes):
+    sum *= disc
+print(sum)
+'''
+
+#Билет N6
+'''
+from random import randint
+list = [[randint(1, 15) for i in range(5)] for j in range(10)]
+sum2 = 0
+for i in range(10):
+    sum = 0
+    for j in range(5):
+
+        sum += list[i][j]
+        print(list[i][j], end='\t')
+    print(f"Среднаяя оценка: {sum / 5}")
+    if sum > sum2:
+        sum2 = sum
+        max = i
+print(f"Спортсмен с наивысшей оценкой под номером {max + 1}")
+'''
+
+#Билет N8
+'''
+with open("primer.txt", "r") as primer:
+    stroka = primer.readline()
+with open("result.txt", "w") as result:
+    result.write(f"{stroka} = {eval(stroka)}")
+'''
+
+#Билет N9
+'''
+path = r"C:\\Users\\myka1\\PycharmProjects\\gfggfgfgfgfgf\\primer.txt"
+list = path.split(r"\\")
+print(f"Корневой каталог: {list[0]}")
+print(f"Файл: {list[-1]}")
+for item in range(len(list)):
+    if item != 0 and item != len(list)-1:
+        print(list[item])
+new = input("Введите новое расширение файла: ")
+old = list[-1].split(".")
+old[1] = new
+list[-1] = ".".join(old)
+print(r"\\".join(list))
+'''
+
+
+#Билет 10
+'''
+from random import randint
+list = [[randint(2, 5) for i in range(5)] for j in range(25)]
+sum2 = 0
+maxPredmet = 0
+minPredmet = 5
+maxStud = 0
+minStud = 5
+for i in range(25):
+    sum = 0
+    for j in range(5):
+        sum += list[i][j]
+        print(list[i][j], end='\t')
+    if maxStud < sum / 5:
+        maxStud = sum / 5
+    if minStud > sum / 5:
+        minStud = sum / 5
+    print(f"Средний балл студента: {sum / 5}")
+
+for i in range(5):
+    sum2 = 0
+    for j in range(25):
+        sum2 += list[j][i]
+    if maxPredmet < sum2/25:
+        maxPredmet = sum2 / 25
+    if minPredmet > sum2/25:
+        minPredmet = sum2 / 25
+    print(f"Средний балл по предмету {i+1} = {sum2 / 25}")
+print(f"Наивысший средний балл по предметам: {maxPredmet}")
+print(f"Наименьший средний балл по предметам: {minPredmet}")
+print(f"Наивысший средний балл студента: {maxStud}")
+print(f"Наименьший средний балл студента: {minStud}")
+'''
+
+#Билет N19
+'''
+palindrom = int(input())
+if palindrom == int(str(palindrom)[::-1]):
+    print("True")
+else:
+    print("False")
+'''
+
+
+#20 билет
+'''
+def romanToInt(s):
+    m = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    } 
+    answer = 0
+    for i in range(len(s)):
+        if i < len(s) - 1 and m[s[i]] < m[s[i+1]]:
+            answer -= m[s[i]]
+        else:
+            answer += m[s[i]]
+    return answer
+print(romanToInt("IX"))
+'''
+
+
+
+#Билет 21
+'''
+from random import randint
+
+N = 100
+a = []
+b = []
+for i in range(N):
+    a.append(randint(1, 100))
+    b.append(a[i])
+print(a)
+
+for i in range(N-1):
+    for j in range(N-i-1):
+        if a[j] > a[j+1]:
+            a[j], a[j+1] = a[j+1], a[j]
+        if b[j] < b[j+1]:
+            b[j], b[j+1] = b[j+1], b[j]
+print(a)
+print(b)
+'''
+
+
+#Билет N22
+'''
+from random import randint
+a = [randint(0, 100) for i in range(100)]
+print(a)
+a.sort()
+a = list(set(a))
+print(a)
+value = int(input("Введите искомое число: "))
+mid = len(a) // 2
+low = 0
+high = len(a) - 1
+
+while a[mid] != value and low <= high:
+    if value > a[mid]:
+        low = mid + 1
+    else:
+        high = mid - 1
+    mid = (low + high) // 2
+
+if low > high:
+    print("Число не найдено")
+else:
+    print(mid)
+'''
+
+
+
+#Билет 23
+'''
+list = []
+while True:
+    item = input()
+    if item != "exit":
+        list.append(item)
+    else:
+        break
+print(list)
+'''
+
+#Билет N25
+'''
+
+from colorama import Fore
+from random import randint
+height = int(input("Введите высоту елки: "))
+tab = height
+space = " "
+star = "*"
+for i in range(height):
+    stroka = space * tab + star * (i + i + 1)
+    tab -= 1
+    listStroka = list(stroka)
+    for item in range(len(listStroka)):
+        if randint(0, 3) == 3 and listStroka[item] == "*":
+            listStroka[item] = Fore.BLUE + "*"
+        elif (randint(0, 3) == 0 or randint(0, 3) == 1 or randint(0, 3) == 2) and listStroka[item] == "*":
+            listStroka[item] = Fore.GREEN + "*"
+    print("".join(listStroka))
+'''
+
+#Билет N26
+'''
+list = list(input())
+print(list[1])
+for item in list:
+    print(item)
+'''
+
+
+#Билет N27
+'''
+def factorial(n):
+    if n <= 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+print("Факториал числа равен:", factorial(int(input("Введите число: "))))
+'''
+
+
+#Билет N28
+'''
+from random import randint
+list = [[randint(1, 100) for i in range(5)] for j in range(5)]
+sum = 0
+for i in range(5):
+    for j in range(5):
+        print(list[i][j], end='\t')
+        if i == j:
+            if list[i][j] % 2 == 0:
+                sum += list[i][j]
+    print("")
+print(sum)
+'''
